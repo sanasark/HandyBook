@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		CEDD89921CB6E02400FD2AEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD89911CB6E02400FD2AEE /* main.m */; };
 		CEDD89951CB6E02400FD2AEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD89941CB6E02400FD2AEE /* AppDelegate.m */; };
-		CEDD89981CB6E02400FD2AEE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD89971CB6E02400FD2AEE /* ViewController.m */; };
 		CEDD899B1CB6E02400FD2AEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD89991CB6E02400FD2AEE /* Main.storyboard */; };
 		CEDD899D1CB6E02400FD2AEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEDD899C1CB6E02400FD2AEE /* Assets.xcassets */; };
 		CEDD89A01CB6E02400FD2AEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD899E1CB6E02400FD2AEE /* LaunchScreen.storyboard */; };
+		CEDD89A91CB6E38B00FD2AEE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD89A81CB6E38B00FD2AEE /* MainViewController.m */; };
+		CEDD89AF1CB6E47A00FD2AEE /* YandexTranslateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD89AE1CB6E47A00FD2AEE /* YandexTranslateManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +21,14 @@
 		CEDD89911CB6E02400FD2AEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CEDD89931CB6E02400FD2AEE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEDD89941CB6E02400FD2AEE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CEDD89961CB6E02400FD2AEE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CEDD89971CB6E02400FD2AEE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CEDD899A1CB6E02400FD2AEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEDD899C1CB6E02400FD2AEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEDD899F1CB6E02400FD2AEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEDD89A11CB6E02400FD2AEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEDD89A71CB6E38B00FD2AEE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		CEDD89A81CB6E38B00FD2AEE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		CEDD89AD1CB6E47A00FD2AEE /* YandexTranslateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YandexTranslateManager.h; sourceTree = "<group>"; };
+		CEDD89AE1CB6E47A00FD2AEE /* YandexTranslateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YandexTranslateManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +63,10 @@
 			children = (
 				CEDD89931CB6E02400FD2AEE /* AppDelegate.h */,
 				CEDD89941CB6E02400FD2AEE /* AppDelegate.m */,
-				CEDD89961CB6E02400FD2AEE /* ViewController.h */,
-				CEDD89971CB6E02400FD2AEE /* ViewController.m */,
+				CEDD89A71CB6E38B00FD2AEE /* MainViewController.h */,
+				CEDD89A81CB6E38B00FD2AEE /* MainViewController.m */,
+				CEDD89AD1CB6E47A00FD2AEE /* YandexTranslateManager.h */,
+				CEDD89AE1CB6E47A00FD2AEE /* YandexTranslateManager.m */,
 				CEDD89991CB6E02400FD2AEE /* Main.storyboard */,
 				CEDD899C1CB6E02400FD2AEE /* Assets.xcassets */,
 				CEDD899E1CB6E02400FD2AEE /* LaunchScreen.storyboard */,
@@ -150,9 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEDD89981CB6E02400FD2AEE /* ViewController.m in Sources */,
 				CEDD89951CB6E02400FD2AEE /* AppDelegate.m in Sources */,
+				CEDD89AF1CB6E47A00FD2AEE /* YandexTranslateManager.m in Sources */,
 				CEDD89921CB6E02400FD2AEE /* main.m in Sources */,
+				CEDD89A91CB6E38B00FD2AEE /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +305,7 @@
 				CEDD89A61CB6E02400FD2AEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
