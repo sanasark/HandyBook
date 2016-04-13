@@ -21,6 +21,9 @@
 		CEDD89A01CB6E02400FD2AEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD899E1CB6E02400FD2AEE /* LaunchScreen.storyboard */; };
 		CEDD89A91CB6E38B00FD2AEE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD89A81CB6E38B00FD2AEE /* MainViewController.m */; };
 		CEDD89AF1CB6E47A00FD2AEE /* YandexTranslateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD89AE1CB6E47A00FD2AEE /* YandexTranslateManager.m */; };
+		CEFD700E1CBE7D27007A6088 /* HBCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEFD700C1CBE7D27007A6088 /* HBCoreData.xcdatamodeld */; };
+		CEFD70131CBE7D79007A6088 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD70101CBE7D79007A6088 /* Book.m */; };
+		CEFD70141CBE7D79007A6088 /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD70121CBE7D79007A6088 /* Word.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,11 @@
 		CEDD89A81CB6E38B00FD2AEE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		CEDD89AD1CB6E47A00FD2AEE /* YandexTranslateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YandexTranslateManager.h; sourceTree = "<group>"; };
 		CEDD89AE1CB6E47A00FD2AEE /* YandexTranslateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YandexTranslateManager.m; sourceTree = "<group>"; };
+		CEFD700D1CBE7D27007A6088 /* HBCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HBCoreData.xcdatamodel; sourceTree = "<group>"; };
+		CEFD700F1CBE7D79007A6088 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		CEFD70101CBE7D79007A6088 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		CEFD70111CBE7D79007A6088 /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
+		CEFD70121CBE7D79007A6088 /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +103,16 @@
 			isa = PBXGroup;
 			children = (
 				CE9353A71CBD7C2500A5CCC9 /* ReadEpub */,
+				CEFD700F1CBE7D79007A6088 /* Book.h */,
+				CEFD70101CBE7D79007A6088 /* Book.m */,
+				CEFD70111CBE7D79007A6088 /* Word.h */,
+				CEFD70121CBE7D79007A6088 /* Word.m */,
 				CEDD89931CB6E02400FD2AEE /* AppDelegate.h */,
 				CEDD89941CB6E02400FD2AEE /* AppDelegate.m */,
 				CEDD89A71CB6E38B00FD2AEE /* MainViewController.h */,
 				CEDD89A81CB6E38B00FD2AEE /* MainViewController.m */,
 				CEDD89991CB6E02400FD2AEE /* Main.storyboard */,
+				CEFD700C1CBE7D27007A6088 /* HBCoreData.xcdatamodeld */,
 				CEDD899C1CB6E02400FD2AEE /* Assets.xcassets */,
 				CEDD899E1CB6E02400FD2AEE /* LaunchScreen.storyboard */,
 				CEDD89A11CB6E02400FD2AEE /* Info.plist */,
@@ -200,7 +213,10 @@
 			files = (
 				CE9353E21CBD7FBA00A5CCC9 /* ioapi.c in Sources */,
 				CE9353E31CBD7FBA00A5CCC9 /* mztools.c in Sources */,
+				CEFD700E1CBE7D27007A6088 /* HBCoreData.xcdatamodeld in Sources */,
 				CE9353E41CBD7FBA00A5CCC9 /* unzip.c in Sources */,
+				CEFD70131CBE7D79007A6088 /* Book.m in Sources */,
+				CEFD70141CBE7D79007A6088 /* Word.m in Sources */,
 				CE9353E51CBD7FBA00A5CCC9 /* zip.c in Sources */,
 				CEDD89951CB6E02400FD2AEE /* AppDelegate.m in Sources */,
 				CEDD89AF1CB6E47A00FD2AEE /* YandexTranslateManager.m in Sources */,
@@ -356,6 +372,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CEFD700C1CBE7D27007A6088 /* HBCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEFD700D1CBE7D27007A6088 /* HBCoreData.xcdatamodel */,
+			);
+			currentVersion = CEFD700D1CBE7D27007A6088 /* HBCoreData.xcdatamodel */;
+			path = HBCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CEDD89851CB6E02400FD2AEE /* Project object */;
 }
