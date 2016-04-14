@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#include "HBConstants.h"
 
 @class AppDelegate;
 
