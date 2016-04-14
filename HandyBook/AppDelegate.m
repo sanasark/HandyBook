@@ -22,27 +22,30 @@
     
     // Unzipped file
     [self unZipEpub:handyBook];
+    
     // Open
     //NSFileManager *fileManager = [[NSFileManager alloc] init];
     return YES;
     
 }
 
-- (void)unZipEpub:(NSString *)epub {
-    NSString *currentDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    
-    NSLog(@"%@",currentDirectory);
-    ZipArchive* za = [[ZipArchive alloc] init];
-    if ([za UnzipOpenFile: epub]) {
-        BOOL ret = [za UnzipFileTo:currentDirectory overWrite:YES];
-        if(ret == NO) {
-            NSLog(@"error");
-        }
-        [za UnzipCloseFile];
-    }
-    
+#pragma mark - Read Epub
 
+- (void)unZipEpub:(NSString *)epub {
+    NSString *booksDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    
+    NSLog(@"%@",booksDirectory);
+    //ZipArchive* za = [[ZipArchive alloc] init];
+    //if ([za UnzipOpenFile: epub]) {
+    //   BOOL ret = [za UnzipFileTo:booksDirectory overWrite:YES];
+    //    if(ret == NO) {
+    //        NSLog(@"error");
+    //    }
+    //    [za UnzipCloseFile];
+    //}
 }
+
+
 
 #pragma mark - Core Data stack
 

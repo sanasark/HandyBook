@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "YandexTranslateManager.h"
+#import "EpubXMLFilesParser.h"
 
 @interface MainViewController ()
 
@@ -22,12 +23,11 @@
         NSLog(@"%@",translation);
         
     }];
-
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    EpubXMLFilesParser *parser = [[EpubXMLFilesParser alloc] initWithFile:[NSString stringWithFormat:@"%@/META-INF/container.xml", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]] ];
+    [parser parseXMLFile];
+    
+    
 }
 
 /*

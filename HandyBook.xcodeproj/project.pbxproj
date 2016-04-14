@@ -14,6 +14,7 @@
 		CE9353E41CBD7FBA00A5CCC9 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = CE9353E01CBD7FBA00A5CCC9 /* unzip.c */; };
 		CE9353E51CBD7FBA00A5CCC9 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = CE9353E11CBD7FBA00A5CCC9 /* zip.c */; };
 		CE9353E71CBD81D000A5CCC9 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9353E61CBD81D000A5CCC9 /* libz.1.2.5.tbd */; };
+		CE9353ED1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */; };
 		CEDD89921CB6E02400FD2AEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD89911CB6E02400FD2AEE /* main.m */; };
 		CEDD89951CB6E02400FD2AEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD89941CB6E02400FD2AEE /* AppDelegate.m */; };
 		CEDD899B1CB6E02400FD2AEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDD89991CB6E02400FD2AEE /* Main.storyboard */; };
@@ -36,6 +37,8 @@
 		CE9353E01CBD7FBA00A5CCC9 /* unzip.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = HandyBook/minizip/unzip.c; sourceTree = "<group>"; };
 		CE9353E11CBD7FBA00A5CCC9 /* zip.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = zip.c; path = HandyBook/minizip/zip.c; sourceTree = "<group>"; };
 		CE9353E61CBD81D000A5CCC9 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		CE9353EB1CBEE1A600A5CCC9 /* EpubXMLFilesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpubXMLFilesParser.h; sourceTree = "<group>"; };
+		CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpubXMLFilesParser.m; sourceTree = "<group>"; };
 		CEDD898D1CB6E02400FD2AEE /* HandyBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandyBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDD89911CB6E02400FD2AEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CEDD89931CB6E02400FD2AEE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,6 +77,8 @@
 				CE9353AB1CBD7D6700A5CCC9 /* ZipArchive.h */,
 				CE9353AC1CBD7D6700A5CCC9 /* ZipArchive.mm */,
 				CE9353A91CBD7CF200A5CCC9 /* minizip */,
+				CE9353EB1CBEE1A600A5CCC9 /* EpubXMLFilesParser.h */,
+				CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */,
 			);
 			name = ReadEpub;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				CE9353E51CBD7FBA00A5CCC9 /* zip.c in Sources */,
 				CEDD89951CB6E02400FD2AEE /* AppDelegate.m in Sources */,
 				CEDD89AF1CB6E47A00FD2AEE /* YandexTranslateManager.m in Sources */,
+				CE9353ED1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m in Sources */,
 				CEDD89921CB6E02400FD2AEE /* main.m in Sources */,
 				CEDD89A91CB6E38B00FD2AEE /* MainViewController.m in Sources */,
 				CE9353AD1CBD7D6700A5CCC9 /* ZipArchive.mm in Sources */,
