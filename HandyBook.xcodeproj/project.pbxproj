@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE9353AA1CBD7CF200A5CCC9 /* minizip in Resources */ = {isa = PBXBuildFile; fileRef = CE9353A91CBD7CF200A5CCC9 /* minizip */; };
+		1CDE15771CBFEDBF009E0D22 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE156F1CBFEDBF009E0D22 /* ioapi.c */; };
+		1CDE15781CBFEDBF009E0D22 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE15711CBFEDBF009E0D22 /* mztools.c */; };
+		1CDE15791CBFEDBF009E0D22 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE15731CBFEDBF009E0D22 /* unzip.c */; };
+		1CDE157A1CBFEDBF009E0D22 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE15751CBFEDBF009E0D22 /* zip.c */; };
+		1CDE157C1CBFEE57009E0D22 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDE157B1CBFEE57009E0D22 /* libz.1.2.5.tbd */; };
 		CE9353AD1CBD7D6700A5CCC9 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE9353AC1CBD7D6700A5CCC9 /* ZipArchive.mm */; };
-		CE9353E21CBD7FBA00A5CCC9 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = CE9353DE1CBD7FBA00A5CCC9 /* ioapi.c */; };
-		CE9353E31CBD7FBA00A5CCC9 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = CE9353DF1CBD7FBA00A5CCC9 /* mztools.c */; };
-		CE9353E41CBD7FBA00A5CCC9 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = CE9353E01CBD7FBA00A5CCC9 /* unzip.c */; };
-		CE9353E51CBD7FBA00A5CCC9 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = CE9353E11CBD7FBA00A5CCC9 /* zip.c */; };
-		CE9353E71CBD81D000A5CCC9 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9353E61CBD81D000A5CCC9 /* libz.1.2.5.tbd */; };
 		CE9353ED1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */; };
 		CEDD89921CB6E02400FD2AEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD89911CB6E02400FD2AEE /* main.m */; };
 		CEDD89951CB6E02400FD2AEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD89941CB6E02400FD2AEE /* AppDelegate.m */; };
@@ -28,15 +27,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE9353A91CBD7CF200A5CCC9 /* minizip */ = {isa = PBXFileReference; lastKnownFileType = folder; path = minizip; sourceTree = "<group>"; };
+		1CDE156E1CBFEDBF009E0D22 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		1CDE156F1CBFEDBF009E0D22 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		1CDE15701CBFEDBF009E0D22 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		1CDE15711CBFEDBF009E0D22 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		1CDE15721CBFEDBF009E0D22 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		1CDE15731CBFEDBF009E0D22 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		1CDE15741CBFEDBF009E0D22 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		1CDE15751CBFEDBF009E0D22 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		1CDE15761CBFEDBF009E0D22 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		1CDE157B1CBFEE57009E0D22 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		CE9353AB1CBD7D6700A5CCC9 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		CE9353AC1CBD7D6700A5CCC9 /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 		CE9353AE1CBD7E2300A5CCC9 /* prestuplenie_i_nakazanie.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = prestuplenie_i_nakazanie.epub; sourceTree = "<group>"; };
-		CE9353DE1CBD7FBA00A5CCC9 /* ioapi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = HandyBook/minizip/ioapi.c; sourceTree = "<group>"; };
-		CE9353DF1CBD7FBA00A5CCC9 /* mztools.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = mztools.c; path = HandyBook/minizip/mztools.c; sourceTree = "<group>"; };
-		CE9353E01CBD7FBA00A5CCC9 /* unzip.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = HandyBook/minizip/unzip.c; sourceTree = "<group>"; };
-		CE9353E11CBD7FBA00A5CCC9 /* zip.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = zip.c; path = HandyBook/minizip/zip.c; sourceTree = "<group>"; };
-		CE9353E61CBD81D000A5CCC9 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		CE9353EB1CBEE1A600A5CCC9 /* EpubXMLFilesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpubXMLFilesParser.h; sourceTree = "<group>"; };
 		CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpubXMLFilesParser.m; sourceTree = "<group>"; };
 		CEDD898D1CB6E02400FD2AEE /* HandyBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandyBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,20 +66,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE9353E71CBD81D000A5CCC9 /* libz.1.2.5.tbd in Frameworks */,
+				1CDE157C1CBFEE57009E0D22 /* libz.1.2.5.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CDE156D1CBFEDBF009E0D22 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				1CDE156E1CBFEDBF009E0D22 /* crypt.h */,
+				1CDE156F1CBFEDBF009E0D22 /* ioapi.c */,
+				1CDE15701CBFEDBF009E0D22 /* ioapi.h */,
+				1CDE15711CBFEDBF009E0D22 /* mztools.c */,
+				1CDE15721CBFEDBF009E0D22 /* mztools.h */,
+				1CDE15731CBFEDBF009E0D22 /* unzip.c */,
+				1CDE15741CBFEDBF009E0D22 /* unzip.h */,
+				1CDE15751CBFEDBF009E0D22 /* zip.c */,
+				1CDE15761CBFEDBF009E0D22 /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
 		CE9353A71CBD7C2500A5CCC9 /* ReadEpub */ = {
 			isa = PBXGroup;
 			children = (
+				1CDE157B1CBFEE57009E0D22 /* libz.1.2.5.tbd */,
+				1CDE156D1CBFEDBF009E0D22 /* minizip */,
 				CE9353AE1CBD7E2300A5CCC9 /* prestuplenie_i_nakazanie.epub */,
 				CE9353AB1CBD7D6700A5CCC9 /* ZipArchive.h */,
 				CE9353AC1CBD7D6700A5CCC9 /* ZipArchive.mm */,
-				CE9353A91CBD7CF200A5CCC9 /* minizip */,
 				CE9353EB1CBEE1A600A5CCC9 /* EpubXMLFilesParser.h */,
 				CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */,
 			);
@@ -86,11 +106,6 @@
 		CEDD89841CB6E02400FD2AEE = {
 			isa = PBXGroup;
 			children = (
-				CE9353E61CBD81D000A5CCC9 /* libz.1.2.5.tbd */,
-				CE9353DE1CBD7FBA00A5CCC9 /* ioapi.c */,
-				CE9353DF1CBD7FBA00A5CCC9 /* mztools.c */,
-				CE9353E01CBD7FBA00A5CCC9 /* unzip.c */,
-				CE9353E11CBD7FBA00A5CCC9 /* zip.c */,
 				CEDD898F1CB6E02400FD2AEE /* HandyBook */,
 				CEDD898E1CB6E02400FD2AEE /* Products */,
 			);
@@ -205,7 +220,6 @@
 				CEDD89A01CB6E02400FD2AEE /* LaunchScreen.storyboard in Resources */,
 				CEDD899D1CB6E02400FD2AEE /* Assets.xcassets in Resources */,
 				CEDD899B1CB6E02400FD2AEE /* Main.storyboard in Resources */,
-				CE9353AA1CBD7CF200A5CCC9 /* minizip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,17 +230,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE9353E21CBD7FBA00A5CCC9 /* ioapi.c in Sources */,
-				CE9353E31CBD7FBA00A5CCC9 /* mztools.c in Sources */,
 				CEFD700E1CBE7D27007A6088 /* HBCoreData.xcdatamodeld in Sources */,
-				CE9353E41CBD7FBA00A5CCC9 /* unzip.c in Sources */,
 				CEFD70131CBE7D79007A6088 /* Book.m in Sources */,
 				CEFD70141CBE7D79007A6088 /* Word.m in Sources */,
-				CE9353E51CBD7FBA00A5CCC9 /* zip.c in Sources */,
 				CEDD89951CB6E02400FD2AEE /* AppDelegate.m in Sources */,
+				1CDE15771CBFEDBF009E0D22 /* ioapi.c in Sources */,
+				1CDE15781CBFEDBF009E0D22 /* mztools.c in Sources */,
+				1CDE15791CBFEDBF009E0D22 /* unzip.c in Sources */,
 				CEDD89AF1CB6E47A00FD2AEE /* YandexTranslateManager.m in Sources */,
 				CE9353ED1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m in Sources */,
 				CEDD89921CB6E02400FD2AEE /* main.m in Sources */,
+				1CDE157A1CBFEDBF009E0D22 /* zip.c in Sources */,
 				CEDD89A91CB6E38B00FD2AEE /* MainViewController.m in Sources */,
 				CE9353AD1CBD7D6700A5CCC9 /* ZipArchive.mm in Sources */,
 			);

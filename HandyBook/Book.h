@@ -17,10 +17,10 @@
 @property (nullable, nonatomic, retain) NSString *path;
 @property (nullable, nonatomic, retain) NSSet<Word *> *unkowndWords;
 
-- (void)addUnkowndWordsObject:(Word *)value;
-- (void)removeUnkowndWordsObject:(Word *)value;
-- (void)addUnkowndWords:(NSSet<Word *> *)values;
-- (void)removeUnkowndWords:(NSSet<Word *> *)values;
+- (void)addUnkowndWordsObject:(Word * _Nullable)value;
+- (void)removeUnkowndWordsObject:(nullable Word *)value;
+- (void)addUnkowndWords:(nullable NSSet<Word *> *)values;
+- (void)removeUnkowndWords:(nullable NSSet<Word *> *)values;
 
 @end
 

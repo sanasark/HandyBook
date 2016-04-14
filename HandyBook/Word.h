@@ -20,9 +20,9 @@
 @property (nullable, nonatomic, retain) NSSet<Book *> *containingBooks;
 
 
-- (void)addContainingBooksObject:(Book *)value;
-- (void)removeContainingBooksObject:(Book *)value;
-- (void)addContainingBooks:(NSSet<Book *> *)values;
-- (void)removeContainingBooks:(NSSet<Book *> *)values;
+- (void)addContainingBooksObject:(Book *_Nullable)value;
+- (void)removeContainingBooksObject:(Book *_Nullable)value;
+- (void)addContainingBooks:(NSSet<Book *> *_Nullable)values;
+- (void)removeContainingBooks:(NSSet<Book *> *_Nullable)values;
 
 @end
