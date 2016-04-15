@@ -29,6 +29,11 @@
     
     
 }
+- (IBAction)goToDictionary:(id)sender {
+    MainViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"Dictionary"];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:vc animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

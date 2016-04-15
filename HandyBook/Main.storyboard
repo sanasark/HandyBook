@@ -281,7 +281,7 @@
         <!--Dictionary View Controller-->
         <scene sceneID="9ro-sU-4he">
             <objects>
-                <viewController id="fvF-C3-O9b" customClass="DictionaryViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Dictionary" id="fvF-C3-O9b" customClass="DictionaryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7fT-i1-gWg"/>
                         <viewControllerLayoutGuide type="bottom" id="wst-Jx-kLe"/>
@@ -408,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUa-Ip-iEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="610" y="318"/>
+            <point key="canvasLocation" x="610" y="357"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mv9-A6-PU1">
