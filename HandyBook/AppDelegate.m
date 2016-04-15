@@ -25,11 +25,27 @@
     
     // Open
     //NSFileManager *fileManager = [[NSFileManager alloc] init];
+    NSURL *url = [launchOptions valueForKey:UIApplicationLaunchOptionsURLKey];
+    if ([url isFileURL])
+    {
+        NSString *myBook = [url absoluteString];
+        [self unZipEpub:myBook];
+    }
     return YES;
     
 }
 
 #pragma mark - Read Epub
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
+    if (url == nil) {
+        return NO;
+    } else {
+        NSString *URLfromSafary = [url absoluteString];
+        [self unZipEpub:URLfromSafary];
+        return YES;
+    }
+}
 
 - (void)unZipEpub:(NSString *)epub {
     NSString *booksDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
