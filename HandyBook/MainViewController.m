@@ -10,7 +10,7 @@
 #import "YandexTranslateManager.h"
 #import "EpubXMLFilesParser.h"
 
-@interface MainViewController ()
+@interface MainViewController () <UIAdaptivePresentationControllerDelegate , UIPopoverPresentationControllerDelegate>
 
 @end
 
@@ -29,6 +29,24 @@
     
     
 }
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier  isEqualToString:@"pop"]) {
+        UIViewController *popover = segue.destinationViewController;
+        popover.modalPresentationStyle = UIModalPresentationPopover;
+        popover.popoverPresentationController.delegate = self;
+    }
+}
+
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+    return UIModalPresentationNone;
+}
+
 
 /*
 #pragma mark - Navigation

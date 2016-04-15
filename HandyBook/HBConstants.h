@@ -17,5 +17,6 @@ typedef void(^dictWordsComplitionHandler) (NSArray *);
 
 static NSString *const kEntityNameWord = @"Word";
 static NSString *const kEntityNameBook = @"Book";
+static NSString *const KCellIdentifierWordCell = @"wordCell";
 
 #endif /* Constants_h */

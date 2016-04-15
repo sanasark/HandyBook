@@ -15,7 +15,6 @@
 		CE9353AD1CBD7D6700A5CCC9 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE9353AC1CBD7D6700A5CCC9 /* ZipArchive.mm */; };
 		CE9353ED1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */; };
 		CED6E32E1CC1574D0013CC39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED6E32D1CC1574D0013CC39 /* Main.storyboard */; };
-		CED6E3311CC157570013CC39 /* DictionaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED6E3301CC157570013CC39 /* DictionaryViewController.m */; };
 		CED6E3341CC1575E0013CC39 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED6E3331CC1575E0013CC39 /* TestViewController.m */; };
 		CED6E3371CC157650013CC39 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED6E3361CC157650013CC39 /* SettingViewController.m */; };
 		CEDD89921CB6E02400FD2AEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD89911CB6E02400FD2AEE /* main.m */; };
@@ -28,6 +27,9 @@
 		CEFD70131CBE7D79007A6088 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD70101CBE7D79007A6088 /* Book.m */; };
 		CEFD70141CBE7D79007A6088 /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD70121CBE7D79007A6088 /* Word.m */; };
 		CEFD70171CBEB213007A6088 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD70161CBEB213007A6088 /* DataManager.m */; };
+		CEFD704D1CC16141007A6088 /* DictionaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD704C1CC16141007A6088 /* DictionaryViewController.m */; };
+		CEFD70501CC165E5007A6088 /* DictionaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD704F1CC165E5007A6088 /* DictionaryTableViewCell.m */; };
+		CEFD70561CC176D3007A6088 /* TranslationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD70551CC176D3007A6088 /* TranslationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +49,6 @@
 		CE9353EB1CBEE1A600A5CCC9 /* EpubXMLFilesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpubXMLFilesParser.h; sourceTree = "<group>"; };
 		CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpubXMLFilesParser.m; sourceTree = "<group>"; };
 		CED6E32D1CC1574D0013CC39 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		CED6E32F1CC157530013CC39 /* DictionaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictionaryViewController.h; sourceTree = "<group>"; };
-		CED6E3301CC157570013CC39 /* DictionaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryViewController.m; sourceTree = "<group>"; };
 		CED6E3321CC1575B0013CC39 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		CED6E3331CC1575E0013CC39 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		CED6E3351CC157610013CC39 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
@@ -72,6 +72,12 @@
 		CEFD70151CBEB213007A6088 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		CEFD70161CBEB213007A6088 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		CEFD70181CBEB481007A6088 /* HBConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBConstants.h; sourceTree = "<group>"; };
+		CEFD704B1CC16141007A6088 /* DictionaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryViewController.h; sourceTree = "<group>"; };
+		CEFD704C1CC16141007A6088 /* DictionaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryViewController.m; sourceTree = "<group>"; };
+		CEFD704E1CC165E5007A6088 /* DictionaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryTableViewCell.h; sourceTree = "<group>"; };
+		CEFD704F1CC165E5007A6088 /* DictionaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryTableViewCell.m; sourceTree = "<group>"; };
+		CEFD70541CC176D3007A6088 /* TranslationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslationViewController.h; sourceTree = "<group>"; };
+		CEFD70551CC176D3007A6088 /* TranslationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,16 +148,10 @@
 				CEFD70121CBE7D79007A6088 /* Word.m */,
 				CEDD89931CB6E02400FD2AEE /* AppDelegate.h */,
 				CEDD89941CB6E02400FD2AEE /* AppDelegate.m */,
-				CEDD89A71CB6E38B00FD2AEE /* MainViewController.h */,
-				CEDD89A81CB6E38B00FD2AEE /* MainViewController.m */,
-				CED6E32F1CC157530013CC39 /* DictionaryViewController.h */,
-				CED6E3301CC157570013CC39 /* DictionaryViewController.m */,
-				CED6E3321CC1575B0013CC39 /* TestViewController.h */,
-				CED6E3331CC1575E0013CC39 /* TestViewController.m */,
-				CED6E3351CC157610013CC39 /* SettingViewController.h */,
-				CED6E3361CC157650013CC39 /* SettingViewController.m */,
-				CEFD70151CBEB213007A6088 /* DataManager.h */,
-				CEFD70161CBEB213007A6088 /* DataManager.m */,
+				CEFD704E1CC165E5007A6088 /* DictionaryTableViewCell.h */,
+				CEFD704F1CC165E5007A6088 /* DictionaryTableViewCell.m */,
+				CEFD704A1CC160CE007A6088 /* ViewControllers */,
+				CEFD70491CC160BF007A6088 /* DataManager */,
 				CED6E32D1CC1574D0013CC39 /* Main.storyboard */,
 				CEFD700C1CBE7D27007A6088 /* HBCoreData.xcdatamodeld */,
 				CEDD899C1CB6E02400FD2AEE /* Assets.xcassets */,
@@ -179,6 +179,32 @@
 				CEDD89AE1CB6E47A00FD2AEE /* YandexTranslateManager.m */,
 			);
 			name = YandexApi;
+			sourceTree = "<group>";
+		};
+		CEFD70491CC160BF007A6088 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CEFD70151CBEB213007A6088 /* DataManager.h */,
+				CEFD70161CBEB213007A6088 /* DataManager.m */,
+			);
+			name = DataManager;
+			sourceTree = "<group>";
+		};
+		CEFD704A1CC160CE007A6088 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEDD89A71CB6E38B00FD2AEE /* MainViewController.h */,
+				CEDD89A81CB6E38B00FD2AEE /* MainViewController.m */,
+				CED6E3321CC1575B0013CC39 /* TestViewController.h */,
+				CED6E3331CC1575E0013CC39 /* TestViewController.m */,
+				CED6E3351CC157610013CC39 /* SettingViewController.h */,
+				CED6E3361CC157650013CC39 /* SettingViewController.m */,
+				CEFD704B1CC16141007A6088 /* DictionaryViewController.h */,
+				CEFD704C1CC16141007A6088 /* DictionaryViewController.m */,
+				CEFD70541CC176D3007A6088 /* TranslationViewController.h */,
+				CEFD70551CC176D3007A6088 /* TranslationViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,11 +281,12 @@
 				CEFD700E1CBE7D27007A6088 /* HBCoreData.xcdatamodeld in Sources */,
 				CEFD70131CBE7D79007A6088 /* Book.m in Sources */,
 				CED6E3371CC157650013CC39 /* SettingViewController.m in Sources */,
-				CED6E3311CC157570013CC39 /* DictionaryViewController.m in Sources */,
 				CEFD70141CBE7D79007A6088 /* Word.m in Sources */,
 				CEFD70171CBEB213007A6088 /* DataManager.m in Sources */,
 				CEDD89951CB6E02400FD2AEE /* AppDelegate.m in Sources */,
 				1CDE15771CBFEDBF009E0D22 /* ioapi.c in Sources */,
+				CEFD70501CC165E5007A6088 /* DictionaryTableViewCell.m in Sources */,
+				CEFD704D1CC16141007A6088 /* DictionaryViewController.m in Sources */,
 				1CDE15781CBFEDBF009E0D22 /* mztools.c in Sources */,
 				1CDE15791CBFEDBF009E0D22 /* unzip.c in Sources */,
 				CEDD89AF1CB6E47A00FD2AEE /* YandexTranslateManager.m in Sources */,
@@ -267,6 +294,7 @@
 				CEDD89921CB6E02400FD2AEE /* main.m in Sources */,
 				1CDE157A1CBFEDBF009E0D22 /* zip.c in Sources */,
 				CEDD89A91CB6E38B00FD2AEE /* MainViewController.m in Sources */,
+				CEFD70561CC176D3007A6088 /* TranslationViewController.m in Sources */,
 				CED6E3341CC1575E0013CC39 /* TestViewController.m in Sources */,
 				CE9353AD1CBD7D6700A5CCC9 /* ZipArchive.mm in Sources */,
 			);
