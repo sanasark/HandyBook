@@ -29,6 +29,9 @@
     
     
 }
+- (IBAction)goToMain:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (IBAction)goToDictionary:(id)sender {
     MainViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"Dictionary"];
     vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

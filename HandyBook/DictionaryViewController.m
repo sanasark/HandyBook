@@ -41,12 +41,11 @@
 //    [super didReceiveMemoryWarning];
 //    // Dispose of any resources that can be recreated.
 //}
-//- (IBAction)backToDictionary:(id)sender {
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
-//- (IBAction)backToMainPage:(id)sender {
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
+
+
+- (IBAction)backToDictionary:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark - Table view data source
 
