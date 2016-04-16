@@ -111,15 +111,70 @@
 		CE9353A71CBD7C2500A5CCC9 /* ReadEpub */ = {
 			isa = PBXGroup;
 			children = (
+				CED44F571CC233EF007CE27E /* EpubXMLParser */,
+				CED44F561CC233CB007CE27E /* UnZipEpub */,
+				CE9353AE1CBD7E2300A5CCC9 /* prestuplenie_i_nakazanie.epub */,
+			);
+			name = ReadEpub;
+			sourceTree = "<group>";
+		};
+		CED44F531CC232E1007CE27E /* Lib */ = {
+			isa = PBXGroup;
+			children = (
 				1CDE157B1CBFEE57009E0D22 /* libz.1.2.5.tbd */,
 				1CDE156D1CBFEDBF009E0D22 /* minizip */,
-				CE9353AE1CBD7E2300A5CCC9 /* prestuplenie_i_nakazanie.epub */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		CED44F541CC232E7007CE27E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEFD704E1CC165E5007A6088 /* DictionaryTableViewCell.h */,
+				CEFD704F1CC165E5007A6088 /* DictionaryTableViewCell.m */,
+				CEDD89A71CB6E38B00FD2AEE /* MainViewController.h */,
+				CEDD89A81CB6E38B00FD2AEE /* MainViewController.m */,
+				CED6E3321CC1575B0013CC39 /* TestViewController.h */,
+				CED6E3331CC1575E0013CC39 /* TestViewController.m */,
+				CED6E3351CC157610013CC39 /* SettingViewController.h */,
+				CED6E3361CC157650013CC39 /* SettingViewController.m */,
+				CEFD704B1CC16141007A6088 /* DictionaryViewController.h */,
+				CEFD704C1CC16141007A6088 /* DictionaryViewController.m */,
+				CEFD70541CC176D3007A6088 /* TranslationViewController.h */,
+				CEFD70551CC176D3007A6088 /* TranslationViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CED44F551CC232EE007CE27E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEFD70491CC160BF007A6088 /* DataManager */,
+				CEFD700F1CBE7D79007A6088 /* Book.h */,
+				CEFD70101CBE7D79007A6088 /* Book.m */,
+				CEFD70111CBE7D79007A6088 /* Word.h */,
+				CEFD700C1CBE7D27007A6088 /* HBCoreData.xcdatamodeld */,
+				CEFD70121CBE7D79007A6088 /* Word.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CED44F561CC233CB007CE27E /* UnZipEpub */ = {
+			isa = PBXGroup;
+			children = (
 				CE9353AB1CBD7D6700A5CCC9 /* ZipArchive.h */,
 				CE9353AC1CBD7D6700A5CCC9 /* ZipArchive.mm */,
+			);
+			name = UnZipEpub;
+			sourceTree = "<group>";
+		};
+		CED44F571CC233EF007CE27E /* EpubXMLParser */ = {
+			isa = PBXGroup;
+			children = (
 				CE9353EB1CBEE1A600A5CCC9 /* EpubXMLFilesParser.h */,
 				CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */,
 			);
-			name = ReadEpub;
+			name = EpubXMLParser;
 			sourceTree = "<group>";
 		};
 		CEDD89841CB6E02400FD2AEE = {
@@ -141,22 +196,15 @@
 		CEDD898F1CB6E02400FD2AEE /* HandyBook */ = {
 			isa = PBXGroup;
 			children = (
+				CED44F551CC232EE007CE27E /* Model */,
+				CED44F541CC232E7007CE27E /* View */,
+				CED44F531CC232E1007CE27E /* Lib */,
 				CE9353A71CBD7C2500A5CCC9 /* ReadEpub */,
-				CEFD700F1CBE7D79007A6088 /* Book.h */,
-				CEFD70101CBE7D79007A6088 /* Book.m */,
-				CEFD70111CBE7D79007A6088 /* Word.h */,
-				CEFD70121CBE7D79007A6088 /* Word.m */,
 				CEDD89931CB6E02400FD2AEE /* AppDelegate.h */,
 				CEDD89941CB6E02400FD2AEE /* AppDelegate.m */,
-				CEFD704E1CC165E5007A6088 /* DictionaryTableViewCell.h */,
-				CEFD704F1CC165E5007A6088 /* DictionaryTableViewCell.m */,
-				CEFD704A1CC160CE007A6088 /* ViewControllers */,
-				CEFD70491CC160BF007A6088 /* DataManager */,
 				CED6E32D1CC1574D0013CC39 /* Main.storyboard */,
-				CEFD700C1CBE7D27007A6088 /* HBCoreData.xcdatamodeld */,
 				CEDD899C1CB6E02400FD2AEE /* Assets.xcassets */,
 				CEDD899E1CB6E02400FD2AEE /* LaunchScreen.storyboard */,
-				CEDD89A11CB6E02400FD2AEE /* Info.plist */,
 				CEFD700B1CBE7B01007A6088 /* YandexApi */,
 				CEDD89901CB6E02400FD2AEE /* Supporting Files */,
 			);
@@ -175,6 +223,7 @@
 		CEFD700B1CBE7B01007A6088 /* YandexApi */ = {
 			isa = PBXGroup;
 			children = (
+				CEDD89A11CB6E02400FD2AEE /* Info.plist */,
 				CEDD89AD1CB6E47A00FD2AEE /* YandexTranslateManager.h */,
 				CEDD89AE1CB6E47A00FD2AEE /* YandexTranslateManager.m */,
 			);
@@ -188,23 +237,6 @@
 				CEFD70161CBEB213007A6088 /* DataManager.m */,
 			);
 			name = DataManager;
-			sourceTree = "<group>";
-		};
-		CEFD704A1CC160CE007A6088 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				CEDD89A71CB6E38B00FD2AEE /* MainViewController.h */,
-				CEDD89A81CB6E38B00FD2AEE /* MainViewController.m */,
-				CED6E3321CC1575B0013CC39 /* TestViewController.h */,
-				CED6E3331CC1575E0013CC39 /* TestViewController.m */,
-				CED6E3351CC157610013CC39 /* SettingViewController.h */,
-				CED6E3361CC157650013CC39 /* SettingViewController.m */,
-				CEFD704B1CC16141007A6088 /* DictionaryViewController.h */,
-				CEFD704C1CC16141007A6088 /* DictionaryViewController.m */,
-				CEFD70541CC176D3007A6088 /* TranslationViewController.h */,
-				CEFD70551CC176D3007A6088 /* TranslationViewController.m */,
-			);
-			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
