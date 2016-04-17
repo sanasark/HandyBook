@@ -27,15 +27,14 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)checkAction:(id)sender {
-    [[DataManager sharedManager] infoForWord:self.wordForCheck complitionHandler:^(Word *word) {
-        
-        if (self.textField.text == word.translation) {
-            ///
-        } else {
-            ///
-        }
-        
-    }];
+
+    if (self.textField.text == self.wordForCheck.translation) {
+        NSLog(@"Ayo");
+    } else {
+        NSLog(@"Voch");
+    }
+    
+    
     
 }
 

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Word.h"
 
 @interface CheckPopoverViewController : UIViewController
 
-@property (nonatomic, strong) NSString *wordForCheck;
+@property (nonatomic, strong) Word *wordForCheck;
 
 @end

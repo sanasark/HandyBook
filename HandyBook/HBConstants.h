@@ -13,6 +13,8 @@
 
 typedef void(^wordInfoComplitionHandler) (Word *);
 typedef void(^dictWordsComplitionHandler) (NSArray *);
+typedef void(^checkWordComplitionHandler) (Word *,CGRect);
+typedef void(^complitionHandler)(void);
 
 
 static NSString *const kEntityNameWord = @"Word";

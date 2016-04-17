@@ -289,7 +289,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="876-Zd-91m" customClass="HBtextView">
                                 <rect key="frame" x="15" y="146" width="290" height="210"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</mutableString>
+                                <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
@@ -300,6 +300,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textView" destination="876-Zd-91m" id="SbS-IY-enp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ziV-Lg-YsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -614,7 +617,7 @@
         <!--Check Popover View Controller-->
         <scene sceneID="WEZ-Bd-LCT">
             <objects>
-                <viewController id="Oig-DU-oNr" customClass="CheckPopoverViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckPopoverViewController" id="Oig-DU-oNr" customClass="CheckPopoverViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rga-kr-l6e"/>
                         <viewControllerLayoutGuide type="bottom" id="Qtn-IZ-fMt"/>
@@ -650,6 +653,7 @@
                             <constraint firstItem="nsf-VM-gPI" firstAttribute="leading" secondItem="d0d-er-uJv" secondAttribute="leading" constant="5" id="gov-hD-osw"/>
                         </constraints>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="150" height="50"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="150" height="50"/>
                     <connections>
