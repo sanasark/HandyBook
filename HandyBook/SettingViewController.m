@@ -7,6 +7,7 @@
 //
 
 #import "SettingViewController.h"
+#import "YandexTranslateManager.h"
 
 @interface SettingViewController ()
 @property (weak, nonatomic) IBOutlet UIPickerView *leftFlag;
@@ -56,6 +57,11 @@
 }
 - (IBAction)ConfirmSettings:(id)sender {
     [self myAlert:@"Complete" andMessage:@"Settings changed" andButton:@"Ok"];
+    [[YandexTranslateManager sharedManager] translateText:@"home" toLanguage:@"fr" completionHandler:^(NSString *translation, NSError *error) {
+        
+        NSLog(@"%@",translation);
+        
+    }];
 }
 
 - (void)myAlert:(NSString*)alertTitle andMessage:(NSString*)message andButton:(NSString*)button {

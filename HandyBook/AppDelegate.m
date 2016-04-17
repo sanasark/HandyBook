@@ -42,6 +42,9 @@
         return NO;
     } else {
         NSString *URLfromSafary = [url absoluteString];
+        NSURL *myURL = [NSURL URLWithString:URLfromSafary];
+        NSData *data = [NSData dataWithContentsOfURL:myURL];
+        NSLog(@"%@ lol", data);
         [self unZipEpub:URLfromSafary];
         return YES;
     }

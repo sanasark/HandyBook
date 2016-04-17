@@ -27,7 +27,6 @@
     EpubXMLFilesParser *parser = [[EpubXMLFilesParser alloc] initWithFile:[NSString stringWithFormat:@"%@/META-INF/container.xml", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]] ];
     [parser parseXMLFile];
     
-    
 }
 - (IBAction)goToMain:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
