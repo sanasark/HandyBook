@@ -15,6 +15,8 @@
 		CE9353AD1CBD7D6700A5CCC9 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE9353AC1CBD7D6700A5CCC9 /* ZipArchive.mm */; };
 		CE9353ED1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */; };
 		CED44F5D1CC41E3B007CE27E /* ContainerXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CED44F5C1CC41E3B007CE27E /* ContainerXMLParser.m */; };
+		CED44F6A1CC43C78007CE27E /* EpubReader.m in Sources */ = {isa = PBXBuildFile; fileRef = CED44F691CC43C78007CE27E /* EpubReader.m */; };
+		CED44F6D1CC43C97007CE27E /* ContentXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CED44F6C1CC43C97007CE27E /* ContentXMLParser.m */; };
 		CED6E32E1CC1574D0013CC39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED6E32D1CC1574D0013CC39 /* Main.storyboard */; };
 		CED6E3341CC1575E0013CC39 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED6E3331CC1575E0013CC39 /* TestViewController.m */; };
 		CED6E3371CC157650013CC39 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED6E3361CC157650013CC39 /* SettingViewController.m */; };
@@ -55,6 +57,10 @@
 		CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpubXMLFilesParser.m; sourceTree = "<group>"; };
 		CED44F5B1CC41E3B007CE27E /* ContainerXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerXMLParser.h; sourceTree = "<group>"; };
 		CED44F5C1CC41E3B007CE27E /* ContainerXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerXMLParser.m; sourceTree = "<group>"; };
+		CED44F681CC43C78007CE27E /* EpubReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpubReader.h; sourceTree = "<group>"; };
+		CED44F691CC43C78007CE27E /* EpubReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpubReader.m; sourceTree = "<group>"; };
+		CED44F6B1CC43C97007CE27E /* ContentXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentXMLParser.h; sourceTree = "<group>"; };
+		CED44F6C1CC43C97007CE27E /* ContentXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentXMLParser.m; sourceTree = "<group>"; };
 		CED6E32D1CC1574D0013CC39 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CED6E3321CC1575B0013CC39 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		CED6E3331CC1575E0013CC39 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
@@ -126,6 +132,8 @@
 		CE9353A71CBD7C2500A5CCC9 /* ReadEpub */ = {
 			isa = PBXGroup;
 			children = (
+				CED44F681CC43C78007CE27E /* EpubReader.h */,
+				CED44F691CC43C78007CE27E /* EpubReader.m */,
 				CED44F571CC233EF007CE27E /* EpubXMLParser */,
 				CED44F561CC233CB007CE27E /* UnZipEpub */,
 				CE9353AE1CBD7E2300A5CCC9 /* prestuplenie_i_nakazanie.epub */,
@@ -196,6 +204,8 @@
 				CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */,
 				CED44F5B1CC41E3B007CE27E /* ContainerXMLParser.h */,
 				CED44F5C1CC41E3B007CE27E /* ContainerXMLParser.m */,
+				CED44F6B1CC43C97007CE27E /* ContentXMLParser.h */,
+				CED44F6C1CC43C97007CE27E /* ContentXMLParser.m */,
 			);
 			name = EpubXMLParser;
 			sourceTree = "<group>";
@@ -339,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED44F5D1CC41E3B007CE27E /* ContainerXMLParser.m in Sources */,
+				CED44F6A1CC43C78007CE27E /* EpubReader.m in Sources */,
 				CEFD700E1CBE7D27007A6088 /* HBCoreData.xcdatamodeld in Sources */,
 				CEFD70131CBE7D79007A6088 /* Book.m in Sources */,
 				CED6E3371CC157650013CC39 /* SettingViewController.m in Sources */,
@@ -351,6 +362,7 @@
 				CEFD704D1CC16141007A6088 /* DictionaryViewController.m in Sources */,
 				1CDE15781CBFEDBF009E0D22 /* mztools.c in Sources */,
 				1CDE15791CBFEDBF009E0D22 /* unzip.c in Sources */,
+				CED44F6D1CC43C97007CE27E /* ContentXMLParser.m in Sources */,
 				CEDD89AF1CB6E47A00FD2AEE /* YandexTranslateManager.m in Sources */,
 				CE9353ED1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m in Sources */,
 				CEDD89921CB6E02400FD2AEE /* main.m in Sources */,

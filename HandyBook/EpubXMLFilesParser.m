@@ -8,11 +8,15 @@
 
 #import "EpubXMLFilesParser.h"
 
-@interface EpubXMLFilesParser()
-
-@end
-
 @implementation EpubXMLFilesParser
 
+- (id)initWithFile:(NSString *)file {
+    self = [super init];
+    return self;
+}
+
+- (void)parseXMLFile {
+    
+}
 
 @end

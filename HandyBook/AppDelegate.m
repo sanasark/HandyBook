@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ZipArchive.h"
+#import "EpubReader.h"
 
 @interface AppDelegate ()
 
@@ -19,17 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     NSString *handyBook = @"/Users/user/Desktop/ios apps/HandyBook/HandyBook/prestuplenie_i_nakazanie.epub";
-    
-    // Unzipped file
-    [self unZipEpub:handyBook];
-    
-    // Open
-    //NSURL *url = [launchOptions valueForKey:UIApplicationLaunchOptionsURLKey];
-    //if ([url isFileURL])
-    //{
-    //    NSString *myBook = [url absoluteString];
-    //    [self unZipEpub:myBook];
-    //}
+    EpubReader *reader = [[EpubReader alloc] initWithEpub:handyBook];
+    [reader readEpub];
     return YES;
     
 }
@@ -44,22 +35,9 @@
         NSURL *myURL = [NSURL URLWithString:URLfromSafary];
         NSData *data = [NSData dataWithContentsOfURL:myURL];
         NSLog(@"%@ lol", data);
-        [self unZipEpub:URLfromSafary];
+        EpubReader *reader = [[EpubReader alloc] initWithEpub:[myURL absoluteString]];
+        [reader readEpub];
         return YES;
-    }
-}
-
-- (void)unZipEpub:(NSString *)epub {
-    NSString *booksDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    
-    NSLog(@"%@",booksDirectory);
-    ZipArchive* za = [[ZipArchive alloc] init];
-    if ([za UnzipOpenFile: epub]) {
-       BOOL ret = [za UnzipFileTo:booksDirectory overWrite:YES];
-        if(ret == NO) {
-            NSLog(@"error");
-        }
-        [za UnzipCloseFile];
     }
 }
 

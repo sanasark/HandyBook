@@ -8,7 +8,6 @@
 
 #import "ContainerXMLParser.h"
 
-
 @interface ContainerXMLParser()
 
 @property NSXMLParser *parser;
@@ -18,7 +17,6 @@
 @property NSString *file;
 
 @end
-
 
 @implementation ContainerXMLParser
 
@@ -52,9 +50,11 @@ foundCharacters:(NSString *)string {
         if ([[self.attribute valueForKey:@"media-type"] isEqualToString:@"application/oebps-package+xml"]) {
             self.rootFile = [self.attribute valueForKey:@"full-path"];
             NSLog(@"%@",self.rootFile);
+            
         } else {
             //invalid epub;
         }
+        
         [parser abortParsing];
     }
 }

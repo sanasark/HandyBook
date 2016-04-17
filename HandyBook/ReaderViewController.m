@@ -41,9 +41,6 @@
                 [self showCheckBoxPopoverInTextView:self.textView inPosition:sourceRect forCheckingWord:word];
         }];
     }];
-        
-    ContainerXMLParser *parser = [[ContainerXMLParser alloc] initWithFile:[NSString stringWithFormat:@"%@/META-INF/container.xml", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]] ];
-    [parser parseXMLFile];
     }
 }
 - (IBAction)switchAction:(id)sender {

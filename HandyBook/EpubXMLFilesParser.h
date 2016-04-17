@@ -10,5 +10,7 @@
 
 @interface EpubXMLFilesParser : NSObject<NSXMLParserDelegate>
 
+- (id)initWithFile:(NSString *)file;
+- (void)parseXMLFile;
 
 @end
