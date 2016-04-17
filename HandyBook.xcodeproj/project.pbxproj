@@ -30,6 +30,10 @@
 		CEFD704D1CC16141007A6088 /* DictionaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD704C1CC16141007A6088 /* DictionaryViewController.m */; };
 		CEFD70501CC165E5007A6088 /* DictionaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD704F1CC165E5007A6088 /* DictionaryTableViewCell.m */; };
 		CEFD70561CC176D3007A6088 /* TranslationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD70551CC176D3007A6088 /* TranslationViewController.m */; };
+		CEFD705C1CC3A0EF007A6088 /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD705B1CC3A0EF007A6088 /* ReaderViewController.m */; };
+		CEFD705F1CC3A12B007A6088 /* HBtextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD705E1CC3A12B007A6088 /* HBtextView.m */; };
+		CEFD70681CC3A1B1007A6088 /* TranslatePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD70671CC3A1B1007A6088 /* TranslatePopoverViewController.m */; };
+		CEFD706B1CC3A1FA007A6088 /* CheckPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD706A1CC3A1FA007A6088 /* CheckPopoverViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +82,14 @@
 		CEFD704F1CC165E5007A6088 /* DictionaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryTableViewCell.m; sourceTree = "<group>"; };
 		CEFD70541CC176D3007A6088 /* TranslationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslationViewController.h; sourceTree = "<group>"; };
 		CEFD70551CC176D3007A6088 /* TranslationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslationViewController.m; sourceTree = "<group>"; };
+		CEFD705A1CC3A0EF007A6088 /* ReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderViewController.h; sourceTree = "<group>"; };
+		CEFD705B1CC3A0EF007A6088 /* ReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderViewController.m; sourceTree = "<group>"; };
+		CEFD705D1CC3A12B007A6088 /* HBtextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBtextView.h; sourceTree = "<group>"; };
+		CEFD705E1CC3A12B007A6088 /* HBtextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBtextView.m; sourceTree = "<group>"; };
+		CEFD70661CC3A1B1007A6088 /* TranslatePopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslatePopoverViewController.h; sourceTree = "<group>"; };
+		CEFD70671CC3A1B1007A6088 /* TranslatePopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslatePopoverViewController.m; sourceTree = "<group>"; };
+		CEFD70691CC3A1FA007A6088 /* CheckPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckPopoverViewController.h; sourceTree = "<group>"; };
+		CEFD706A1CC3A1FA007A6088 /* CheckPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckPopoverViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +154,12 @@
 				CEFD704C1CC16141007A6088 /* DictionaryViewController.m */,
 				CEFD70541CC176D3007A6088 /* TranslationViewController.h */,
 				CEFD70551CC176D3007A6088 /* TranslationViewController.m */,
+				CEFD705A1CC3A0EF007A6088 /* ReaderViewController.h */,
+				CEFD705B1CC3A0EF007A6088 /* ReaderViewController.m */,
+				CEFD70661CC3A1B1007A6088 /* TranslatePopoverViewController.h */,
+				CEFD70671CC3A1B1007A6088 /* TranslatePopoverViewController.m */,
+				CEFD70691CC3A1FA007A6088 /* CheckPopoverViewController.h */,
+				CEFD706A1CC3A1FA007A6088 /* CheckPopoverViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -216,6 +234,8 @@
 			children = (
 				CEDD89911CB6E02400FD2AEE /* main.m */,
 				CEFD70181CBEB481007A6088 /* HBConstants.h */,
+				CEFD705D1CC3A12B007A6088 /* HBtextView.h */,
+				CEFD705E1CC3A12B007A6088 /* HBtextView.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -316,6 +336,7 @@
 				CEFD70141CBE7D79007A6088 /* Word.m in Sources */,
 				CEFD70171CBEB213007A6088 /* DataManager.m in Sources */,
 				CEDD89951CB6E02400FD2AEE /* AppDelegate.m in Sources */,
+				CEFD70681CC3A1B1007A6088 /* TranslatePopoverViewController.m in Sources */,
 				1CDE15771CBFEDBF009E0D22 /* ioapi.c in Sources */,
 				CEFD70501CC165E5007A6088 /* DictionaryTableViewCell.m in Sources */,
 				CEFD704D1CC16141007A6088 /* DictionaryViewController.m in Sources */,
@@ -326,9 +347,12 @@
 				CEDD89921CB6E02400FD2AEE /* main.m in Sources */,
 				1CDE157A1CBFEDBF009E0D22 /* zip.c in Sources */,
 				CEDD89A91CB6E38B00FD2AEE /* MainViewController.m in Sources */,
+				CEFD706B1CC3A1FA007A6088 /* CheckPopoverViewController.m in Sources */,
 				CEFD70561CC176D3007A6088 /* TranslationViewController.m in Sources */,
 				CED6E3341CC1575E0013CC39 /* TestViewController.m in Sources */,
 				CE9353AD1CBD7D6700A5CCC9 /* ZipArchive.mm in Sources */,
+				CEFD705C1CC3A0EF007A6088 /* ReaderViewController.m in Sources */,
+				CEFD705F1CC3A12B007A6088 /* HBtextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
