@@ -10,10 +10,5 @@
 
 @interface EpubXMLFilesParser : NSObject<NSXMLParserDelegate>
 
-@property NSString *rootFile;
-
-- (void)parseXMLFile;
-
-- (id)initWithFile:(NSString *)file;
 
 @end

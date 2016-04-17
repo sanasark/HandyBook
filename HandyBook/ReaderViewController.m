@@ -12,7 +12,7 @@
 #import "HBtextView.h"
 #import "DataManager.h"
 #import "CheckPopoverViewController.h"
-
+#import "ContainerXMLParser.h"
 
 
 @interface ReaderViewController ()  <UIPopoverPresentationControllerDelegate, UIAdaptivePresentationControllerDelegate, UITextViewDelegate>
@@ -41,6 +41,9 @@
                 [self showCheckBoxPopoverInTextView:self.textView inPosition:sourceRect forCheckingWord:word];
         }];
     }];
+        
+    ContainerXMLParser *parser = [[ContainerXMLParser alloc] initWithFile:[NSString stringWithFormat:@"%@/META-INF/container.xml", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]] ];
+    [parser parseXMLFile];
     }
 }
 - (IBAction)switchAction:(id)sender {

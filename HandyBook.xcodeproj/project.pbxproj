@@ -14,6 +14,7 @@
 		1CDE157C1CBFEE57009E0D22 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CDE157B1CBFEE57009E0D22 /* libz.1.2.5.tbd */; };
 		CE9353AD1CBD7D6700A5CCC9 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE9353AC1CBD7D6700A5CCC9 /* ZipArchive.mm */; };
 		CE9353ED1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */; };
+		CED44F5D1CC41E3B007CE27E /* ContainerXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CED44F5C1CC41E3B007CE27E /* ContainerXMLParser.m */; };
 		CED6E32E1CC1574D0013CC39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED6E32D1CC1574D0013CC39 /* Main.storyboard */; };
 		CED6E3341CC1575E0013CC39 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED6E3331CC1575E0013CC39 /* TestViewController.m */; };
 		CED6E3371CC157650013CC39 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED6E3361CC157650013CC39 /* SettingViewController.m */; };
@@ -52,6 +53,8 @@
 		CE9353AE1CBD7E2300A5CCC9 /* prestuplenie_i_nakazanie.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = prestuplenie_i_nakazanie.epub; sourceTree = "<group>"; };
 		CE9353EB1CBEE1A600A5CCC9 /* EpubXMLFilesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpubXMLFilesParser.h; sourceTree = "<group>"; };
 		CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpubXMLFilesParser.m; sourceTree = "<group>"; };
+		CED44F5B1CC41E3B007CE27E /* ContainerXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerXMLParser.h; sourceTree = "<group>"; };
+		CED44F5C1CC41E3B007CE27E /* ContainerXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerXMLParser.m; sourceTree = "<group>"; };
 		CED6E32D1CC1574D0013CC39 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CED6E3321CC1575B0013CC39 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		CED6E3331CC1575E0013CC39 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 			children = (
 				CE9353EB1CBEE1A600A5CCC9 /* EpubXMLFilesParser.h */,
 				CE9353EC1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m */,
+				CED44F5B1CC41E3B007CE27E /* ContainerXMLParser.h */,
+				CED44F5C1CC41E3B007CE27E /* ContainerXMLParser.m */,
 			);
 			name = EpubXMLParser;
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED44F5D1CC41E3B007CE27E /* ContainerXMLParser.m in Sources */,
 				CEFD700E1CBE7D27007A6088 /* HBCoreData.xcdatamodeld in Sources */,
 				CEFD70131CBE7D79007A6088 /* Book.m in Sources */,
 				CED6E3371CC157650013CC39 /* SettingViewController.m in Sources */,

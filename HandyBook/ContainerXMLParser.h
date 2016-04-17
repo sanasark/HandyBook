@@ -10,4 +10,9 @@
 
 @interface ContainerXMLParser : EpubXMLFilesParser
 
+@property NSString *rootFile;
+
+- (id)initWithFile:(NSString *)file;
+- (void)parseXMLFile;
+
 @end

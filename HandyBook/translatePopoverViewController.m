@@ -20,6 +20,7 @@
     [super viewDidLoad];
     self.translationLabel.adjustsFontSizeToFitWidth = YES;
     self.translationLabel.text =self.translation;
+    
 }
 - (IBAction)addButtonAction:(id)sender {
     [[DataManager sharedManager] insertWordInCoreData:self.word withTranslation:self.translation];

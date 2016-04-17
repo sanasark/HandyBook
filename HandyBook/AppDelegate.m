@@ -24,13 +24,12 @@
     [self unZipEpub:handyBook];
     
     // Open
-    //NSFileManager *fileManager = [[NSFileManager alloc] init];
-    NSURL *url = [launchOptions valueForKey:UIApplicationLaunchOptionsURLKey];
-    if ([url isFileURL])
-    {
-        NSString *myBook = [url absoluteString];
-        [self unZipEpub:myBook];
-    }
+    //NSURL *url = [launchOptions valueForKey:UIApplicationLaunchOptionsURLKey];
+    //if ([url isFileURL])
+    //{
+    //    NSString *myBook = [url absoluteString];
+    //    [self unZipEpub:myBook];
+    //}
     return YES;
     
 }

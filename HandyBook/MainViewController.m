@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 #import "YandexTranslateManager.h"
-#import "EpubXMLFilesParser.h"
+#import "ContainerXMLParser.h"
 
 @interface MainViewController () <UIAdaptivePresentationControllerDelegate , UIPopoverPresentationControllerDelegate>
 
@@ -23,9 +23,6 @@
         NSLog(@"%@",translation);
         
     }];
-    
-    EpubXMLFilesParser *parser = [[EpubXMLFilesParser alloc] initWithFile:[NSString stringWithFormat:@"%@/META-INF/container.xml", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]] ];
-    [parser parseXMLFile];
     
 }
 - (IBAction)goToMain:(id)sender {
