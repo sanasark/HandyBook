@@ -10,4 +10,6 @@
 
 @interface CheckPopoverViewController : UIViewController
 
+@property (nonatomic, strong) NSString *wordForCheck;
+
 @end

@@ -567,7 +567,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FV-Vm-UaL">
-                                <rect key="frame" x="0.0" y="0.0" width="105" height="50"/>
+                                <rect key="frame" x="5" y="0.0" width="95" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -590,8 +590,8 @@
                             <constraint firstItem="1rA-i6-4Gb" firstAttribute="top" secondItem="DGr-Mv-iVM" secondAttribute="bottom" id="KTR-Bc-NCf"/>
                             <constraint firstAttribute="bottom" secondItem="1rA-i6-4Gb" secondAttribute="bottom" constant="5" id="Q7w-kk-SqA"/>
                             <constraint firstAttribute="trailing" secondItem="1rA-i6-4Gb" secondAttribute="trailing" id="Wd2-OZ-pRm"/>
-                            <constraint firstItem="3FV-Vm-UaL" firstAttribute="leading" secondItem="BE3-u6-o6k" secondAttribute="leading" id="cVx-e3-8xh"/>
-                            <constraint firstItem="1rA-i6-4Gb" firstAttribute="leading" secondItem="3FV-Vm-UaL" secondAttribute="trailing" id="mzQ-wM-0O2"/>
+                            <constraint firstItem="3FV-Vm-UaL" firstAttribute="leading" secondItem="BE3-u6-o6k" secondAttribute="leading" constant="5" id="cVx-e3-8xh"/>
+                            <constraint firstItem="1rA-i6-4Gb" firstAttribute="leading" secondItem="3FV-Vm-UaL" secondAttribute="trailing" constant="5" id="mzQ-wM-0O2"/>
                             <constraint firstItem="3FV-Vm-UaL" firstAttribute="top" secondItem="BE3-u6-o6k" secondAttribute="top" id="ruh-nl-on8"/>
                         </constraints>
                         <variation key="default">
@@ -622,10 +622,39 @@
                     <view key="view" contentMode="scaleToFill" id="d0d-er-uJv">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nsf-VM-gPI">
+                                <rect key="frame" x="5" y="5" width="90" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7Z-Lf-v3Y">
+                                <rect key="frame" x="100" y="0.0" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="u7Z-Lf-v3Y" secondAttribute="height" id="fmd-Og-30G"/>
+                                </constraints>
+                                <state key="normal" title="Check"/>
+                                <connections>
+                                    <action selector="checkAction:" destination="Oig-DU-oNr" eventType="touchUpInside" id="p24-ja-dHL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qtn-IZ-fMt" firstAttribute="top" secondItem="nsf-VM-gPI" secondAttribute="bottom" constant="5" id="6TS-7j-sWc"/>
+                            <constraint firstItem="nsf-VM-gPI" firstAttribute="top" secondItem="d0d-er-uJv" secondAttribute="top" constant="5" id="7Iw-d9-DYa"/>
+                            <constraint firstItem="u7Z-Lf-v3Y" firstAttribute="leading" secondItem="nsf-VM-gPI" secondAttribute="trailing" constant="5" id="CXn-Cn-fzL"/>
+                            <constraint firstItem="u7Z-Lf-v3Y" firstAttribute="top" secondItem="d0d-er-uJv" secondAttribute="top" id="FBR-d9-IOX"/>
+                            <constraint firstItem="Qtn-IZ-fMt" firstAttribute="top" secondItem="u7Z-Lf-v3Y" secondAttribute="bottom" id="M0L-MF-Z5Q"/>
+                            <constraint firstAttribute="trailing" secondItem="u7Z-Lf-v3Y" secondAttribute="trailing" id="PLf-Lo-ZgE"/>
+                            <constraint firstItem="nsf-VM-gPI" firstAttribute="leading" secondItem="d0d-er-uJv" secondAttribute="leading" constant="5" id="gov-hD-osw"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="150" height="50"/>
+                    <connections>
+                        <outlet property="textField" destination="nsf-VM-gPI" id="hwh-nC-1Ti"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylW-bG-Rxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

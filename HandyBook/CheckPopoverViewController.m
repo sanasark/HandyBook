@@ -7,9 +7,12 @@
 //
 
 #import "CheckPopoverViewController.h"
+#import "DataManager.h"
+#import "Word.h"
 
 @interface CheckPopoverViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 @end
 
 @implementation CheckPopoverViewController
@@ -22,6 +25,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)checkAction:(id)sender {
+    [[DataManager sharedManager] infoForWord:self.wordForCheck complitionHandler:^(Word *word) {
+        
+        if (self.textField.text == word.translation) {
+            ///
+        } else {
+            ///
+        }
+        
+    }];
+    
 }
 
 /*
