@@ -21,20 +21,30 @@
 @property (nonatomic) dispatch_queue_t searchQueue;
 
 @property (nonatomic, strong) NSMutableArray *arrayOfExistingWords;
+@property (weak, nonatomic) IBOutlet UISwitch *checkSwitch;
+@property (nonatomic, assign) BOOL checkPopover;
+
 @end
 
 @implementation ReaderViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.searchQueue =  dispatch_queue_create("search", DISPATCH_QUEUE_CONCURRENT);
-   // NSString *aString = @"hello world       this may     have lots   of sp:ace or little      space";
-   // [self checkText:aString];
-    [self searchUnknownWordsWithComplitionHandler:^{
-        [self checkTextinTextView:self.textView checkWordComplitionHandler:^(Word *word, CGRect sourceRect) {
-            [self showCheckBoxPopoverInTextView:self.textView inPosition:sourceRect forCheckingWord:word];
+    self.checkSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"checkStatus"];
+    
+    if (self.checkSwitch.on) {
+        self.searchQueue =  dispatch_queue_create("search", DISPATCH_QUEUE_CONCURRENT);
+        self.checkPopover = NO;
+        [self searchUnknownWordsWithComplitionHandler:^{
+            [self checkTextinTextView:self.textView checkWordComplitionHandler:^(Word *word, CGRect sourceRect) {
+                self.checkPopover = YES;
+                [self showCheckBoxPopoverInTextView:self.textView inPosition:sourceRect forCheckingWord:word];
         }];
     }];
+    }
+}
+- (IBAction)switchAction:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setBool:self.checkSwitch.on forKey:@"checkStatus"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,8 +56,8 @@
     self.arrayOfExistingWords = [[NSMutableArray alloc] init];
     
     dispatch_async(self.searchQueue, ^{
-        NSArray *textArray = [self.textView.text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        textArray = [textArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF != ''"]];
+        NSArray *textArray = [self.textView.text componentsSeparatedByCharactersInSet:[[NSCharacterSet letterCharacterSet] invertedSet]] ;
+            textArray = [textArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF != ''"]];
         [[DataManager sharedManager] dictionaryWordsWithComplitionHandler:^(NSArray *wordsInTheDictionary) {
             NSMutableArray *existingWords =  [wordsInTheDictionary mutableCopy];
             BOOL wordIsFound = NO;
@@ -98,9 +108,13 @@
 }
 
 - (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController {
-    [self checkTextinTextView:self.textView checkWordComplitionHandler:^(Word *word, CGRect sourceRect) {
-        [self showCheckBoxPopoverInTextView:self.textView inPosition:sourceRect forCheckingWord:word];
-    }];
+    if (self.checkSwitch.on && self.checkPopover)  {
+        [self checkTextinTextView:self.textView checkWordComplitionHandler:^(Word *word, CGRect sourceRect) {
+            self.checkPopover = YES;
+            [self showCheckBoxPopoverInTextView:self.textView inPosition:sourceRect forCheckingWord:word];
+        }];
+    }
+    self.checkPopover = NO;
 }
 
 - (void)showCheckBoxPopoverInTextView:(UITextView *)textView inPosition:(CGRect)sourceRect forCheckingWord:(Word        *)word {
@@ -130,7 +144,7 @@
         pop.sourceRect = sourceRect ;
         pop.delegate = self;
         
-        [[YandexTranslateManager sharedManager] translateText:text toLanguage:@"ru" completionHandler:^(NSString *translation, NSError *error) {
+        [[YandexTranslateManager sharedManager] translateText:text toLanguage:@"en" completionHandler:^(NSString *translation, NSError *error) {
             
             popoverVC.translation = translation;
             popoverVC.word = text;

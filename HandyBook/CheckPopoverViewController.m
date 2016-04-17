@@ -28,12 +28,17 @@
 }
 - (IBAction)checkAction:(id)sender {
 
-    if (self.textField.text == self.wordForCheck.translation) {
-        NSLog(@"Ayo");
+    if ([self.textField.text isEqualToString:self.wordForCheck.translation]) {
+        self.textField.textColor = [UIColor greenColor];
+        self.textField.text = @"Right";
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
+        
     } else {
-        NSLog(@"Voch");
+        self.textField.textColor = [UIColor redColor];
+        self.textField.text = @"Wrong";
     }
-    
     
     
 }

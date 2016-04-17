@@ -285,6 +285,9 @@
 		CEDD89851CB6E02400FD2AEE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					44,
+				);
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = ACA;
 				TargetAttributes = {
