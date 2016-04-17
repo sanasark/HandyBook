@@ -7,12 +7,13 @@
 //
 
 #import "TestViewController.h"
+#import "YandexTranslateManager.h"
 
 @interface TestViewController ()
 
 @end
 
-@implementation TestViewController
+@implementation TestViewController //Сделать Test и озеленение
 
 - (void)viewDidLoad {
     [super viewDidLoad];

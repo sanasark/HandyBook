@@ -18,6 +18,7 @@
 @property (nullable, nonatomic, retain) NSString *translation;
 @property (nullable, nonatomic, retain) NSString *unknownWord;
 @property (nullable, nonatomic, retain) NSSet<Book *> *containingBooks;
+@property //есть number of right answers, числом является, если равно 3, hasLearnt bool == YES;
 
 
 - (void)addContainingBooksObject:(Book *_Nullable)value;

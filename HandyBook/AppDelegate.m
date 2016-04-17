@@ -54,14 +54,14 @@
     NSString *booksDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     
     NSLog(@"%@",booksDirectory);
-    //ZipArchive* za = [[ZipArchive alloc] init];
-    //if ([za UnzipOpenFile: epub]) {
-    //   BOOL ret = [za UnzipFileTo:booksDirectory overWrite:YES];
-    //    if(ret == NO) {
-    //        NSLog(@"error");
-    //    }
-    //    [za UnzipCloseFile];
-    //}
+    ZipArchive* za = [[ZipArchive alloc] init];
+    if ([za UnzipOpenFile: epub]) {
+       BOOL ret = [za UnzipFileTo:booksDirectory overWrite:YES];
+        if(ret == NO) {
+            NSLog(@"error");
+        }
+        [za UnzipCloseFile];
+    }
 }
 
 
