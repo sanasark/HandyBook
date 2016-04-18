@@ -11,7 +11,7 @@
 @interface EpubReader : NSObject
 
 @property NSString *epubPath;
-@property NSString *epubContent;
+@property NSMutableString *epubContent;
 @property NSString *epubCoverImagePath;
 @property NSString *epubName;
 

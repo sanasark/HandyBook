@@ -10,6 +10,7 @@
 #import "ZipArchive.h"
 #import "ContainerXMLParser.h"
 #import "ContentXMLParser.h"
+#import "BookSectionXMLParser.h"
 
 @interface EpubReader()
 
@@ -23,6 +24,7 @@
     if (self = [super init]) {
         self.epubPath = path;
         self.epubName = [[self.epubPath lastPathComponent] stringByDeletingPathExtension];
+        self.epubContent = [@"" mutableCopy];
         NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
         self.booksDirectory = [documentsDirectory stringByAppendingString:[NSString stringWithFormat:@"/%@", self.epubName]];
     }
@@ -41,6 +43,12 @@
     //contentOpfParser.bookCreator
     //contentOpfParser.bookTitle
     //contentOpfParser.bookDescription
+    for (NSString *contentFilePath in contentOpfParser.bookContentFilePaths) {
+        
+        BookSectionXMLParser *sectionParser = [[BookSectionXMLParser alloc] initWithFile:[self.booksDirectory stringByAppendingFormat:@"/%@/%@", [containerParser.rootFile stringByDeletingLastPathComponent], contentFilePath]];
+        [sectionParser parseXMLFile];
+        [self.epubContent appendString:sectionParser.sectionContent];
+    }
     
 }
 

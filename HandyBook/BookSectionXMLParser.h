@@ -10,6 +10,6 @@
 
 @interface BookSectionXMLParser : EpubXMLFilesParser
 
-@property NSString *sectionContent;
+@property NSMutableString *sectionContent;
 
 @end

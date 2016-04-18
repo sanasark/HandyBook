@@ -23,6 +23,7 @@
 - (id)initWithFile:(NSString *)file {
     if (self = [super init]) {
         self.file = file;
+        self.sectionContent = [@"" mutableCopy];
     }
     return self;
 }
@@ -46,23 +47,28 @@ didStartElement:(NSString *)elementName
 
 - (void)parser:(NSXMLParser *)parser
 foundCharacters:(NSString *)string {
-    if ([self.element isEqualToString:@"rootfile"]) {
-        if ([[self.attribute valueForKey:@"media-type"] isEqualToString:@"application/oebps-package+xml"]) {
-            //self.rootFile = [self.attribute valueForKey:@"full-path"];
-            //NSLog(@"%@",self.rootFile);
-            
-        } else {
-            //invalid epub;
-        }
+    if ([self.element isEqualToString:@"h1"] ||
+        [self.element isEqualToString:@"h2"] ||
+        [self.element isEqualToString:@"h3"] ||
+        [self.element isEqualToString:@"p"]) {
         
-        [parser abortParsing];
+        [self.sectionContent appendString:string];
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser
+ didEndElement:(NSString *)elementName
+  namespaceURI:(NSString *)namespaceURI
+ qualifiedName:(NSString *)qName {
+    if ([self.element isEqualToString:@"body"]) {
+        [self.parser abortParsing];
     }
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-    //if (!self.rootFile) {
+    if (!self.sectionContent) {
         //invalid epub;
-    //}
+    }
 }
 
 @end
