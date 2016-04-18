@@ -37,6 +37,10 @@
     //parse Content.opf
     ContentXMLParser *contentOpfParser = [[ContentXMLParser alloc] initWithFile:[self.booksDirectory stringByAppendingFormat:@"/%@", containerParser.rootFile]];
     [contentOpfParser parseXMLFile];
+    //contentOpfParser.coverImagePath
+    //contentOpfParser.bookCreator
+    //contentOpfParser.bookTitle
+    //contentOpfParser.bookDescription
     
 }
 

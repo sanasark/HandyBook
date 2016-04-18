@@ -11,5 +11,11 @@
 @interface ContentXMLParser : EpubXMLFilesParser
 
 @property NSString *coverImagePath;
+@property NSString *bookTitle;
+@property NSString *bookCreator;
+@property NSString *bookLanguage;
+@property NSMutableString *bookDescription;
+@property NSMutableArray *bookContentFilePaths;
+
 
 @end

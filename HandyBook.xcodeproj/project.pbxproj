@@ -17,6 +17,7 @@
 		CED44F5D1CC41E3B007CE27E /* ContainerXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CED44F5C1CC41E3B007CE27E /* ContainerXMLParser.m */; };
 		CED44F6A1CC43C78007CE27E /* EpubReader.m in Sources */ = {isa = PBXBuildFile; fileRef = CED44F691CC43C78007CE27E /* EpubReader.m */; };
 		CED44F6D1CC43C97007CE27E /* ContentXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CED44F6C1CC43C97007CE27E /* ContentXMLParser.m */; };
+		CED44F701CC51DE5007CE27E /* BookSectionXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CED44F6F1CC51DE5007CE27E /* BookSectionXMLParser.m */; };
 		CED6E32E1CC1574D0013CC39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED6E32D1CC1574D0013CC39 /* Main.storyboard */; };
 		CED6E3341CC1575E0013CC39 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED6E3331CC1575E0013CC39 /* TestViewController.m */; };
 		CED6E3371CC157650013CC39 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED6E3361CC157650013CC39 /* SettingViewController.m */; };
@@ -61,6 +62,8 @@
 		CED44F691CC43C78007CE27E /* EpubReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpubReader.m; sourceTree = "<group>"; };
 		CED44F6B1CC43C97007CE27E /* ContentXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentXMLParser.h; sourceTree = "<group>"; };
 		CED44F6C1CC43C97007CE27E /* ContentXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentXMLParser.m; sourceTree = "<group>"; };
+		CED44F6E1CC51DE5007CE27E /* BookSectionXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookSectionXMLParser.h; sourceTree = "<group>"; };
+		CED44F6F1CC51DE5007CE27E /* BookSectionXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookSectionXMLParser.m; sourceTree = "<group>"; };
 		CED6E32D1CC1574D0013CC39 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CED6E3321CC1575B0013CC39 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		CED6E3331CC1575E0013CC39 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 				CED44F5C1CC41E3B007CE27E /* ContainerXMLParser.m */,
 				CED44F6B1CC43C97007CE27E /* ContentXMLParser.h */,
 				CED44F6C1CC43C97007CE27E /* ContentXMLParser.m */,
+				CED44F6E1CC51DE5007CE27E /* BookSectionXMLParser.h */,
+				CED44F6F1CC51DE5007CE27E /* BookSectionXMLParser.m */,
 			);
 			name = EpubXMLParser;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 				CE9353ED1CBEE1A600A5CCC9 /* EpubXMLFilesParser.m in Sources */,
 				CEDD89921CB6E02400FD2AEE /* main.m in Sources */,
 				1CDE157A1CBFEDBF009E0D22 /* zip.c in Sources */,
+				CED44F701CC51DE5007CE27E /* BookSectionXMLParser.m in Sources */,
 				CEDD89A91CB6E38B00FD2AEE /* MainViewController.m in Sources */,
 				CEFD706B1CC3A1FA007A6088 /* CheckPopoverViewController.m in Sources */,
 				CEFD70561CC176D3007A6088 /* TranslationViewController.m in Sources */,
