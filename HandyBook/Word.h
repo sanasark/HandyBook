@@ -22,9 +22,9 @@
 // есть number of right answers, числом является, если равно 3, hasLearnt bool == YES
 
 
-- (void)addContainingBooksObject:(Book *_Nullable)value;
-- (void)removeContainingBooksObject:(Book *_Nullable)value;
-- (void)addContainingBooks:(NSSet<Book *> *_Nullable)values;
-- (void)removeContainingBooks:(NSSet<Book *> *_Nullable)values;
+//- (void)addContainingBooksObject:(Book *_Nullable)value;
+//- (void)removeContainingBooksObject:(Book *_Nullable)value;
+//- (void)addContainingBooks:(NSSet<Book *> *_Nullable)values;
+//- (void)removeContainingBooks:(NSSet<Book *> *_Nullable)values;
 
 @end

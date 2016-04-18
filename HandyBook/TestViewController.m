@@ -11,8 +11,8 @@
 #import "DataManager.h"
 
 @interface TestViewController ()
-@property NSInteger *forRand;
-@property NSInteger *forIncorrectRand;
+@property NSInteger forRand;
+@property NSInteger forIncorrectRand;
 @property (weak, nonatomic) IBOutlet UILabel *Question;
 @property (weak, nonatomic) IBOutlet UIButton *buttonOne;
 @property (weak, nonatomic) IBOutlet UIButton *buttonTwo;
@@ -31,38 +31,38 @@
     //    }];
     [[DataManager sharedManager] dictionaryWordsWithComplitionHandler:^(NSArray *myArray) {
         NSLog(@"%lu", (unsigned long)[myArray count]);
-        _forRand = 0 + rand()%[myArray count];
-        NSString *word = [[myArray objectAtIndex:_forRand] translation];
-        self.Question.text = [[myArray objectAtIndex:_forRand] unknownWord];
-        _forRand = 0 + rand()%4;
+        self.forRand = 0 + rand()%[myArray count];
+        NSString *word = [[myArray objectAtIndex:self.forRand] translation];
+        self.Question.text = [[myArray objectAtIndex:self.forRand] unknownWord];
+        self.forRand = 0 + rand()%4;
         NSLog(@"%i", _forRand);
-        if (_forRand == 0 || _forRand == 1) {
+        if (self.forRand == 0 || self.forRand == 1) {
             
-            [_buttonOne setTitle:word forState:UIControlStateNormal];
+            [self.buttonOne setTitle:word forState:UIControlStateNormal];
         } else {
-            _forIncorrectRand = 0 + rand()%[myArray count];
-            [_buttonOne setTitle:[[myArray objectAtIndex:_forIncorrectRand]translation] forState:UIControlStateNormal];
+            self.forIncorrectRand = 0 + rand()%[myArray count];
+            [self.buttonOne setTitle:[[myArray objectAtIndex:self.forIncorrectRand] translation] forState:UIControlStateNormal];
         }
-        if (_forRand == 2) {
+        if (self.forRand == 2) {
             
-            [_buttonTwo setTitle:word forState:UIControlStateNormal];
+            [self.buttonTwo setTitle:word forState:UIControlStateNormal];
         } else {
-            _forIncorrectRand = 0 + rand()%[myArray count];
-            [_buttonTwo setTitle:[[myArray objectAtIndex:_forIncorrectRand]translation] forState:UIControlStateNormal];
+            self.forIncorrectRand = 0 + rand()%[myArray count];
+            [self.buttonTwo setTitle:[[myArray objectAtIndex:self.forIncorrectRand] translation] forState:UIControlStateNormal];
         }
-        if (_forRand == 3) {
+        if (self.forRand == 3) {
             
-            [_buttonThree setTitle:word forState:UIControlStateNormal];
+            [self.buttonThree setTitle:word forState:UIControlStateNormal];
         } else {
-            _forIncorrectRand = 0 + rand()%[myArray count];
-            [_buttonThree setTitle:[[myArray objectAtIndex:_forIncorrectRand]translation] forState:UIControlStateNormal];
+            self.forIncorrectRand = 0 + rand()%[myArray count];
+            [self.buttonThree setTitle:[[myArray objectAtIndex:self.forIncorrectRand] translation] forState:UIControlStateNormal];
         }
-        if (_forRand == 4) {
+        if (self.forRand == 4) {
             
-            [_buttonFour setTitle:word forState:UIControlStateNormal];
+            [self.buttonFour setTitle:word forState:UIControlStateNormal];
         } else {
-            _forIncorrectRand = 0 + rand()%[myArray count];
-            [_buttonFour setTitle:[[myArray objectAtIndex:_forIncorrectRand]translation] forState:UIControlStateNormal];
+            self.forIncorrectRand = 0 + rand()%[myArray count];
+            [self.buttonFour setTitle:[[myArray objectAtIndex:self.forIncorrectRand] translation] forState:UIControlStateNormal];
         }
         
         
