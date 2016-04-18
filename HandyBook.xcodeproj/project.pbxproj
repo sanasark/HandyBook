@@ -38,6 +38,7 @@
 		CEFD705F1CC3A12B007A6088 /* HBtextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD705E1CC3A12B007A6088 /* HBtextView.m */; };
 		CEFD70681CC3A1B1007A6088 /* TranslatePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD70671CC3A1B1007A6088 /* TranslatePopoverViewController.m */; };
 		CEFD706B1CC3A1FA007A6088 /* CheckPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD706A1CC3A1FA007A6088 /* CheckPopoverViewController.m */; };
+		CEFD70A21CC59977007A6088 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD70A11CC59977007A6088 /* TextViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,8 @@
 		CEFD70671CC3A1B1007A6088 /* TranslatePopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslatePopoverViewController.m; sourceTree = "<group>"; };
 		CEFD70691CC3A1FA007A6088 /* CheckPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckPopoverViewController.h; sourceTree = "<group>"; };
 		CEFD706A1CC3A1FA007A6088 /* CheckPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckPopoverViewController.m; sourceTree = "<group>"; };
+		CEFD70A01CC59977007A6088 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
+		CEFD70A11CC59977007A6088 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 				CEFD70551CC176D3007A6088 /* TranslationViewController.m */,
 				CEFD705A1CC3A0EF007A6088 /* ReaderViewController.h */,
 				CEFD705B1CC3A0EF007A6088 /* ReaderViewController.m */,
+				CEFD70A01CC59977007A6088 /* TextViewController.h */,
+				CEFD70A11CC59977007A6088 /* TextViewController.m */,
 				CEFD70661CC3A1B1007A6088 /* TranslatePopoverViewController.h */,
 				CEFD70671CC3A1B1007A6088 /* TranslatePopoverViewController.m */,
 				CEFD70691CC3A1FA007A6088 /* CheckPopoverViewController.h */,
@@ -375,6 +380,7 @@
 				CED44F701CC51DE5007CE27E /* BookSectionXMLParser.m in Sources */,
 				CEDD89A91CB6E38B00FD2AEE /* MainViewController.m in Sources */,
 				CEFD706B1CC3A1FA007A6088 /* CheckPopoverViewController.m in Sources */,
+				CEFD70A21CC59977007A6088 /* TextViewController.m in Sources */,
 				CEFD70561CC176D3007A6088 /* TranslationViewController.m in Sources */,
 				CED6E3341CC1575E0013CC39 /* TestViewController.m in Sources */,
 				CE9353AD1CBD7D6700A5CCC9 /* ZipArchive.mm in Sources */,

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="exU-ra-s7i">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -270,30 +270,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="876-Zd-91m" customClass="HBtextView">
-                                <rect key="frame" x="15" y="146" width="290" height="210"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Некоторые иностранцы думают, что в России медведи ходят по улицам. Конечно, это неправда! Медведи живут в лесу и не любят людей.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="exU-ra-s7i" id="Mx9-uF-tfK"/>
-                                </connections>
-                            </textView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKA-BM-4q1">
-                                <rect key="frame" x="256" y="72" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKA-BM-4q1">
+                                <rect key="frame" x="260" y="72" width="51" height="31"/>
                                 <connections>
                                     <action selector="switchAction:" destination="exU-ra-s7i" eventType="valueChanged" id="vQA-DR-mTb"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Turn ON answering" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcT-yh-Hur">
-                                <rect key="frame" x="50" y="77" width="147" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn ON answering" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcT-yh-Hur">
+                                <rect key="frame" x="26" y="77" width="224" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VL2-0l-FiA">
+                                <rect key="frame" x="16" y="131" width="288" height="369"/>
+                                <connections>
+                                    <segue destination="0QE-RO-MxP" kind="embed" id="lLO-Fl-iSV"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="VL2-0l-FiA" secondAttribute="trailing" id="1Cv-wg-Aj2"/>
+                            <constraint firstItem="N4p-Bs-goa" firstAttribute="top" secondItem="VL2-0l-FiA" secondAttribute="bottom" constant="68" id="38c-ga-zzx"/>
+                            <constraint firstItem="gKA-BM-4q1" firstAttribute="top" secondItem="oGb-o8-8Vi" secondAttribute="bottom" constant="8" id="B4J-qI-rab"/>
+                            <constraint firstItem="jcT-yh-Hur" firstAttribute="leading" secondItem="djr-Mt-W53" secondAttribute="leadingMargin" constant="10" id="BCb-6s-j33"/>
+                            <constraint firstItem="gKA-BM-4q1" firstAttribute="leading" secondItem="jcT-yh-Hur" secondAttribute="trailing" constant="10" id="CuZ-o0-1EG"/>
+                            <constraint firstItem="VL2-0l-FiA" firstAttribute="top" secondItem="gKA-BM-4q1" secondAttribute="bottom" constant="28" id="KMm-Rt-Vpy"/>
+                            <constraint firstItem="jcT-yh-Hur" firstAttribute="top" secondItem="oGb-o8-8Vi" secondAttribute="bottom" constant="13" id="OQ4-Ww-aPS"/>
+                            <constraint firstItem="VL2-0l-FiA" firstAttribute="leading" secondItem="djr-Mt-W53" secondAttribute="leadingMargin" id="PnK-8D-qzI"/>
+                            <constraint firstItem="gKA-BM-4q1" firstAttribute="leading" secondItem="jcT-yh-Hur" secondAttribute="trailing" constant="59" id="SEf-Db-XFt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gKA-BM-4q1" secondAttribute="trailing" constant="-5" id="bEY-Mo-7cG"/>
+                            <constraint firstItem="VL2-0l-FiA" firstAttribute="top" secondItem="gKA-BM-4q1" secondAttribute="bottom" constant="28" id="gEf-s8-9Ia"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="SEf-Db-XFt"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -554,6 +568,45 @@
             </objects>
             <point key="canvasLocation" x="182" y="-346"/>
         </scene>
+        <!--Text View Controller-->
+        <scene sceneID="kcJ-Iu-ksn">
+            <objects>
+                <viewController storyboardIdentifier="textVC" id="gdd-Ex-XNW" customClass="textViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zYb-Fw-pUy"/>
+                        <viewControllerLayoutGuide type="bottom" id="n09-qG-NPb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L8w-j9-Kfd">
+                        <rect key="frame" x="0.0" y="0.0" width="288" height="369"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="876-Zd-91m" customClass="HBtextView">
+                                <rect key="frame" x="16" y="0.0" width="256" height="369"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Некоторые иностранцы думают, что в России медведи ходят по улицам. Конечно, это неправда! Медведи живут в лесу и не любят людей.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gdd-Ex-XNW" id="Oan-Pu-qQf"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n09-qG-NPb" firstAttribute="top" secondItem="876-Zd-91m" secondAttribute="bottom" id="FJU-d3-vUJ"/>
+                            <constraint firstItem="876-Zd-91m" firstAttribute="leading" secondItem="L8w-j9-Kfd" secondAttribute="leadingMargin" id="PJc-Fn-sPg"/>
+                            <constraint firstItem="876-Zd-91m" firstAttribute="top" secondItem="zYb-Fw-pUy" secondAttribute="bottom" id="X8C-6q-Kbl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="876-Zd-91m" secondAttribute="trailing" id="gTp-wf-3RQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="876-Zd-91m" id="gcq-uB-Iu1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rrG-g7-VWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-257.5" y="872.5"/>
+        </scene>
         <!--Translate Popover View Controller-->
         <scene sceneID="KjK-3x-qGy">
             <objects>
@@ -660,6 +713,18 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylW-bG-Rxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="173" y="775"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="dcT-nm-Z4A">
+            <objects>
+                <pageViewController storyboardIdentifier="pageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="0QE-RO-MxP" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="gdd-Ex-XNW" kind="show" id="X4q-Qg-yTL"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y9K-Tx-WRG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-160.5" y="335.5"/>
         </scene>
     </scenes>
     <resources>

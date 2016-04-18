@@ -18,5 +18,5 @@
 - (void)infoForWord:(NSString *)word complitionHandler:(wordInfoComplitionHandler)complitionHandler;
 - (void)deleteWord:(Word *)word;
 - (void)dictionaryWordsWithComplitionHandler:(dictWordsComplitionHandler)complitionHandler;
-
+- (void)insertBookWithName:(NSString *)name text:(NSString *)text coverImage:(UIImage *)image;
 @end

@@ -16,6 +16,10 @@
 
 @property (nullable, nonatomic, retain) NSString *path;
 @property (nullable, nonatomic, retain) NSSet<Word *> *unkowndWords;
+@property (nullable, nonatomic, strong) NSString *text;
+@property (nullable, nonatomic, strong) NSData *coverImage;
+@property (nullable, nonatomic, strong) NSString *name;
+@property (nullable, nonatomic, strong) NSString *author;
 
 //- (void)addUnkowndWordsObject:(Word * _Nullable)value;
 //- (void)removeUnkowndWordsObject:(nullable Word *)value;
