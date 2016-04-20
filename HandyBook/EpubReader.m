@@ -11,8 +11,15 @@
 #import "ContainerXMLParser.h"
 #import "ContentXMLParser.h"
 #import "BookSectionXMLParser.h"
+#import "Book.h"
+#import "AppDelegate.h"
 
 @interface EpubReader()
+
+@property NSString *epubPath;
+@property NSMutableString *epubContent;
+@property NSString *epubCoverImagePath;
+@property NSString *epubName;
 
 @property NSString *booksDirectory;
 
@@ -31,7 +38,7 @@
     return self;
 }
 
-- (void)readEpub {
+- (Book *)readEpub {
     [self unZipEpub];
     //parse Container.xml to get content.opf path
     ContainerXMLParser *containerParser = [[ContainerXMLParser alloc] initWithFile:[self.booksDirectory stringByAppendingString:@"/META-INF/container.xml"]];
@@ -39,10 +46,8 @@
     //parse Content.opf
     ContentXMLParser *contentOpfParser = [[ContentXMLParser alloc] initWithFile:[self.booksDirectory stringByAppendingFormat:@"/%@", containerParser.rootFile]];
     [contentOpfParser parseXMLFile];
-    //contentOpfParser.coverImagePath
-    //contentOpfParser.bookCreator
-    //contentOpfParser.bookTitle
-    //contentOpfParser.bookDescription
+    
+    
     for (NSString *contentFilePath in contentOpfParser.bookContentFilePaths) {
         
         BookSectionXMLParser *sectionParser = [[BookSectionXMLParser alloc] initWithFile:[self.booksDirectory stringByAppendingFormat:@"/%@/%@", [containerParser.rootFile stringByDeletingLastPathComponent], contentFilePath]];
@@ -50,6 +55,18 @@
         [self.epubContent appendString:sectionParser.sectionContent];
     }
     
+    NSManagedObjectContext *context = [[UIApplication appDelegate] managedObjectContext];
+    Book *book = [NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:context];
+    
+    [book setPath:self.epubPath
+      bookContent:self.epubContent
+   coverImagePath:contentOpfParser.coverImagePath
+            title:contentOpfParser.bookTitle
+           author:contentOpfParser.bookCreator
+  bookDescription:contentOpfParser.bookDescription];
+    
+    [[UIApplication appDelegate] saveContext];
+    return book;
 }
 
 - (void)unZipEpub {
