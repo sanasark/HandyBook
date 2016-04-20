@@ -28,10 +28,12 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+
+@property Book *currentBook;
+@property NSMutableArray *books;
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
-
-
 
 
 @end
