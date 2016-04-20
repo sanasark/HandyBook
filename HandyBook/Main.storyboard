@@ -581,7 +581,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="876-Zd-91m" customClass="HBtextView">
-                                <rect key="frame" x="16" y="0.0" width="256" height="369"/>
+                                <rect key="frame" x="16" y="0.0" width="256" height="349"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Некоторые иностранцы думают, что в России медведи ходят по улицам. Конечно, это неправда! Медведи живут в лесу и не любят людей.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -590,22 +590,41 @@
                                     <outlet property="delegate" destination="gdd-Ex-XNW" id="Oan-Pu-qQf"/>
                                 </connections>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOx-5c-2XP">
+                                <rect key="frame" x="134" y="349" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hOx-5c-2XP" secondAttribute="height" id="6TR-mW-wkn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="n09-qG-NPb" firstAttribute="top" secondItem="876-Zd-91m" secondAttribute="bottom" id="FJU-d3-vUJ"/>
+                            <constraint firstItem="n09-qG-NPb" firstAttribute="top" secondItem="hOx-5c-2XP" secondAttribute="bottom" id="7Lz-Bt-rlS"/>
+                            <constraint firstItem="hOx-5c-2XP" firstAttribute="centerX" secondItem="L8w-j9-Kfd" secondAttribute="centerX" id="DWk-7W-FcV"/>
+                            <constraint firstItem="n09-qG-NPb" firstAttribute="top" secondItem="876-Zd-91m" secondAttribute="bottom" constant="20" id="FJU-d3-vUJ"/>
+                            <constraint firstItem="hOx-5c-2XP" firstAttribute="top" secondItem="876-Zd-91m" secondAttribute="bottom" id="In1-jK-aoB"/>
                             <constraint firstItem="876-Zd-91m" firstAttribute="leading" secondItem="L8w-j9-Kfd" secondAttribute="leadingMargin" id="PJc-Fn-sPg"/>
                             <constraint firstItem="876-Zd-91m" firstAttribute="top" secondItem="zYb-Fw-pUy" secondAttribute="bottom" id="X8C-6q-Kbl"/>
+                            <constraint firstItem="hOx-5c-2XP" firstAttribute="centerY" secondItem="L8w-j9-Kfd" secondAttribute="centerY" id="bdW-Op-sfk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="876-Zd-91m" secondAttribute="trailing" id="gTp-wf-3RQ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bdW-Op-sfk"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="pageLabel" destination="hOx-5c-2XP" id="TMf-xH-o0S"/>
                         <outlet property="textView" destination="876-Zd-91m" id="gcq-uB-Iu1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rrG-g7-VWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-257.5" y="872.5"/>
+            <point key="canvasLocation" x="-258" y="872.5"/>
         </scene>
         <!--Translate Popover View Controller-->
         <scene sceneID="KjK-3x-qGy">

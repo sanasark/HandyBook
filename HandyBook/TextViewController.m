@@ -23,6 +23,7 @@
 
 @property (nonatomic, strong) NSMutableArray *arrayOfExistingWords;
 @property (nonatomic, assign) BOOL checkPopover;
+@property (weak, nonatomic) IBOutlet UILabel *pageLabel;
 
 
 @end
@@ -31,6 +32,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.pageLabel.adjustsFontSizeToFitWidth = YES;
+  //  self.pageLabel.text = NSString stringWithFormat:@"%@",self.
     if (self.checkIsOn) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startShowingPopovers:) name:@"pageIsTurned" object:nil];
     }
