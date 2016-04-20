@@ -33,25 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIFont * theFont = [UIFont boldSystemFontOfSize:14];
-    CGSize charSize = [@"A" sizeWithFont:theFont];
-
-    NSInteger col = self.textView.frame.size.height / charSize.height;
-    NSInteger row = self.textView.frame.size.width  / charSize.width;
-    NSInteger numberOfCharacters = col*row;
-    NSMutableString *str = [[[TextManager sharedManager] epubText] mutableCopy];
-    self.textArray = [[NSMutableArray alloc] init];
-    NSLog(@"%D",[str length]/numberOfCharacters);
-    [self.textArray insertObject:[str substringToIndex:(numberOfCharacters)]  atIndex:0];
-    
-    NSMutableString *temp= [[NSMutableString alloc] init];
-    for (NSInteger i = 0; i<numberOfCharacters-1; i++) {
-        [temp insertString:@"i" atIndex:0];
-    }
-    [temp insertString:@"2" atIndex:[temp length]];
-    self.textView.text = temp;
-    
-    NSLog(@"%@",self.textArray[0]);
+ 
 
     
 //    self.textView.text = self.textArray[0];
@@ -67,6 +49,56 @@
         }];
     }
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+
+}
+
+- (void)viewDidLayoutSubviews {
+    if ([[[TextManager sharedManager] pageRanges] count] > self.pageNumber) {
+        NSArray *temp = [[[TextManager sharedManager] pageRanges] objectAtIndex:self.pageNumber];
+        self.textView.text = [[[[TextManager sharedManager] epubText] substringFromIndex:[temp[0] integerValue]] substringToIndex:[temp[1] integerValue]];
+        
+    } else {
+        
+        
+        
+        if (self.pageNumber == 0) {
+            NSInteger remainingLenght = [[[TextManager sharedManager] epubText] length];
+            if ( remainingLenght > 2000 ) {
+                self.textView.text = [[[TextManager sharedManager] epubText] substringToIndex:2000] ;
+            } else {
+                self.textView.text = [[[TextManager sharedManager] epubText] substringToIndex:remainingLenght];
+            }
+            
+            NSNumber *pageLenght =[NSNumber numberWithInteger:[self visibleRangeOfTextView:self.textView]];
+            NSArray *temp = [NSArray arrayWithObjects:@0, pageLenght, nil];
+            [[[TextManager sharedManager] pageRanges] insertObject:temp atIndex:self.pageNumber];
+            
+        } else {
+            NSInteger remainingLenght = ([[[TextManager sharedManager] epubText] length] - [[[[[TextManager sharedManager] pageRanges] objectAtIndex:(self.pageNumber -1)] objectAtIndex:1] integerValue]);
+            NSArray *temp = [[[TextManager sharedManager] pageRanges] objectAtIndex:(self.pageNumber -1 )];
+            NSInteger startLocation = [[temp objectAtIndex:1] integerValue];
+            if ( remainingLenght > 2000 ) {
+                self.textView.text = [[[[TextManager sharedManager] epubText] substringFromIndex:startLocation] substringToIndex:(startLocation + 20000)];
+            } else {
+                self.textView.text = [[[[TextManager sharedManager] epubText] substringFromIndex:startLocation] substringToIndex:(startLocation + remainingLenght)];
+            }
+
+            NSNumber *pageLenght =[NSNumber numberWithInteger:([self visibleRangeOfTextView:self.textView] + startLocation)];
+            NSArray *temp2 = [NSArray arrayWithObjects:[NSNumber numberWithInteger:[temp[1] integerValue] ] , pageLenght, nil];
+            [[[TextManager sharedManager] pageRanges] insertObject:temp2 atIndex:self.pageNumber];
+
+        }
+        
+    }
+    if ([[[TextManager sharedManager] epubText] length] > [[[[[TextManager sharedManager] pageRanges] objectAtIndex:self.pageNumber] objectAtIndex:1] integerValue]) {
+        [TextManager sharedManager].numberOfPages++;
+    }
+
 }
 
 
@@ -99,26 +131,32 @@
     
 }
 
+
+- (NSInteger)visibleRangeOfTextView:(UITextView *)textView {
+    CGRect bounds = textView.bounds;
+    UITextPosition *temp1 = textView.beginningOfDocument;
+    UITextPosition *temp2 = textView.endOfDocument;
+    UITextPosition *start = [textView characterRangeAtPoint:bounds.origin].start;
+    UITextPosition *end = [textView characterRangeAtPoint:CGPointMake(bounds.size.width, bounds.size.height)].end;
+    NSRange range = NSMakeRange([textView offsetFromPosition:textView.beginningOfDocument toPosition:start],
+                                [textView offsetFromPosition:start toPosition:end]);
+    NSLog(@"%lu", (unsigned long)range.length);
+    return range.length;
+}
+
 - (void)checkTextinTextView:(UITextView *)textView checkWordComplitionHandler:(checkWordComplitionHandler)complitionHandler {
     
     if ([self.arrayOfExistingWords count]>0) {
-        dispatch_resume(self.searchQueue);
-        dispatch_async(self.searchQueue, ^{
             NSRange range = [textView.text rangeOfString:[self.arrayOfExistingWords[0] unknownWord]];
             UITextPosition *beginning = textView.beginningOfDocument;
             UITextPosition *start = [textView positionFromPosition:beginning offset:range.location];
             UITextPosition *end = [textView positionFromPosition:start offset:range.length];
             UITextRange *textRange = [textView textRangeFromPosition:start toPosition:end];
             CGRect textRect = [self textPositionWithRange:textRange inTextView:textView];
-            dispatch_async(dispatch_get_main_queue(), ^{
                 complitionHandler([self.arrayOfExistingWords objectAtIndex:0],textRect);
                 NSLog(@"%@",[[self.arrayOfExistingWords objectAtIndex:0] unknownWord]);
                 [self.arrayOfExistingWords removeObjectAtIndex:0];
-                
-            });
             
-        });
-        dispatch_suspend(self.searchQueue);
     };
     
     
@@ -148,10 +186,11 @@
 }
 
 - (void)textViewDidChangeSelection:(UITextView *)textView {
-
+  // [self visibleRangeOfTextView:self.textView];
+    
     UITextRange * selectionRange = [textView selectedTextRange];
-    if (selectionRange) {
-        NSString *text = [NSString stringWithFormat:@"%@",[textView textInRange:selectionRange]];
+    NSString *text = [NSString stringWithFormat:@"%@",[textView textInRange:selectionRange]];
+    if (selectionRange && !([text isEqualToString:@""])) {
         CGRect sourceRect  = [self textPositionWithRange:selectionRange inTextView:textView];
         TranslatePopoverViewController *popoverVC = [self.storyboard instantiateViewControllerWithIdentifier:@"translatiePopover"];
         popoverVC.modalPresentationStyle = UIModalPresentationPopover;

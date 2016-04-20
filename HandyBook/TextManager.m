@@ -21,4 +21,12 @@
     return instance;
 }
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.pageRanges = [NSMutableArray new];
+    }
+    return self;
+}
+
 @end

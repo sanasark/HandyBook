@@ -8,6 +8,7 @@
 
 #import "ReaderViewController.h"
 #import "TextViewController.h"
+#import "TextManager.h"
 
 
 @interface ReaderViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
@@ -16,6 +17,7 @@
 @property (nonatomic, strong) NSArray *textArray;
 @property (nonatomic, strong) UIPageViewController *pageVC;
 @property (nonatomic, assign) NSInteger pageIndex;
+
 
 @end
 
@@ -27,11 +29,13 @@
     self.pageVC.delegate = self;
     self.pageVC.dataSource = self;
     self.checkSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"checkStatus"];
-    
+    [TextManager sharedManager].numberOfPages = 1;
     
     textViewController *VC = [self newVCAtPage:0];
     [self.pageVC setViewControllers:[NSArray arrayWithObject:VC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     ;
+    
+    NSLog(@"%@",[[[TextManager sharedManager] epubText] substringToIndex:4000]);
     
 }
 
@@ -78,7 +82,7 @@
     
     index++;
     
-    if (index == 5) {
+    if (index == [[TextManager sharedManager] numberOfPages]) {
         return nil;
     }
     
@@ -88,7 +92,8 @@
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
     // The number of items reflected in the page indicator.
-    return 5;
+    
+    return [[TextManager sharedManager] numberOfPages];
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {

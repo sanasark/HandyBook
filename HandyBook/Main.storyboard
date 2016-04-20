@@ -580,7 +580,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="288" height="369"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Некоторые иностранцы думают, что в России медведи ходят по улицам. Конечно, это неправда! Медведи живут в лесу и не любят" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="876-Zd-91m" customClass="HBtextView">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Некоторые иностранцы думают, что в России медведи ходят по улицам. Конечно, это неправда! Медведи живут в лесу и не любят" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="876-Zd-91m" customClass="HBtextView">
                                 <rect key="frame" x="16" y="0.0" width="256" height="369"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

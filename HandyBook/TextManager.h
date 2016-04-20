@@ -11,6 +11,8 @@
 @interface TextManager : NSObject
 
 @property (nonatomic, copy) NSString *epubText;
+@property (nonatomic ,strong) NSMutableArray *pageRanges;
+@property (nonatomic, assign) NSInteger numberOfPages;
 
 + (instancetype)sharedManager;
 
