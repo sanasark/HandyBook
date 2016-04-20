@@ -32,15 +32,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if (self.checkIsOn) {
-        self.searchQueue =  dispatch_queue_create("search", DISPATCH_QUEUE_CONCURRENT);
-        self.checkPopover = NO;
-        [self searchUnknownWordsWithComplitionHandler:^{
-            [self checkTextinTextView:self.textView checkWordComplitionHandler:^(Word *word, CGRect sourceRect) {
-                self.checkPopover = YES;
-                [self showCheckBoxPopoverInTextView:self.textView inPosition:sourceRect forCheckingWord:word];
-            }];
-        }];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startShowingPopovers:) name:@"pageIsTurned" object:nil];
     }
+    
+    
+}
+
+
+- (void)startShowingPopovers:(NSNotification *)notification {
+    self.searchQueue =  dispatch_queue_create("search", DISPATCH_QUEUE_CONCURRENT);
+    self.checkPopover = NO;
+    [self searchUnknownWordsWithComplitionHandler:^{
+        [self checkTextinTextView:self.textView checkWordComplitionHandler:^(Word *word, CGRect sourceRect) {
+            self.checkPopover = YES;
+            [self showCheckBoxPopoverInTextView:self.textView inPosition:sourceRect forCheckingWord:word];
+        }];
+    }];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
 
@@ -65,7 +73,6 @@
                     [existingWords removeObject:text];
                 }
             }
-            dispatch_suspend(self.searchQueue);
             complitionHandler();
         }];
     });
@@ -75,23 +82,18 @@
 - (void)checkTextinTextView:(UITextView *)textView checkWordComplitionHandler:(checkWordComplitionHandler)complitionHandler {
     
     if ([self.arrayOfExistingWords count]>0) {
-        dispatch_resume(self.searchQueue);
-        dispatch_async(self.searchQueue, ^{
-            NSRange range = [textView.text rangeOfString:[self.arrayOfExistingWords[0] unknownWord]];
-            UITextPosition *beginning = textView.beginningOfDocument;
-            UITextPosition *start = [textView positionFromPosition:beginning offset:range.location];
-            UITextPosition *end = [textView positionFromPosition:start offset:range.length];
-            UITextRange *textRange = [textView textRangeFromPosition:start toPosition:end];
-            CGRect textRect = [self textPositionWithRange:textRange inTextView:textView];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                complitionHandler([self.arrayOfExistingWords objectAtIndex:0],textRect);
-                NSLog(@"%@",[[self.arrayOfExistingWords objectAtIndex:0] unknownWord]);
-                [self.arrayOfExistingWords removeObjectAtIndex:0];
-                
-            });
-            
-        });
-        dispatch_suspend(self.searchQueue);
+        NSRange range = [textView.text rangeOfString:[self.arrayOfExistingWords[0] unknownWord]];
+        UITextPosition *beginning = textView.beginningOfDocument;
+        UITextPosition *start = [textView positionFromPosition:beginning offset:range.location];
+        UITextPosition *end = [textView positionFromPosition:start offset:range.length];
+        UITextRange *textRange = [textView textRangeFromPosition:start toPosition:end];
+        CGRect textRect = [self textPositionWithRange:textRange inTextView:textView];
+        NSLog(@"%@",self.description);
+        
+        NSLog(@"%@",[[self.arrayOfExistingWords objectAtIndex:0] unknownWord]);
+        complitionHandler([self.arrayOfExistingWords objectAtIndex:0],textRect);
+        [self.arrayOfExistingWords removeObjectAtIndex:0];
+
     };
     
     

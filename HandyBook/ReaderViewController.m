@@ -28,12 +28,16 @@
     self.pageVC.dataSource = self;
     self.checkSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"checkStatus"];
     
-    
+
     
     [self.pageVC setViewControllers:[NSArray arrayWithObject:[self newVCAtPage:0]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
+    if (self.checkSwitch.on) {
+        [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"pageIsTurned" object:nil]];
+    }
     
     }
+
 - (IBAction)switchAction:(id)sender {
     [[NSUserDefaults standardUserDefaults] setBool:self.checkSwitch.on forKey:@"checkStatus"];
 }
@@ -89,6 +93,11 @@
     return 0;
 }
 
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
+    if (self.checkSwitch.on) {
+        [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"pageIsTurned" object:nil]];
+    }
+}
 
 /*
 #pragma mark - Navigation
