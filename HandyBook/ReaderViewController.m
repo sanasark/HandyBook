@@ -8,7 +8,8 @@
 
 #import "ReaderViewController.h"
 #import "TextViewController.h"
-
+#import "AppDelegate.h"
+#import "Book.h"
 
 @interface ReaderViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
@@ -35,7 +36,9 @@
     if (self.checkSwitch.on) {
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"pageIsTurned" object:nil]];
     }
-    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    Book *book = appDelegate.currentBook;
+    NSLog(@"%@", book.coverImagePath);
     }
 
 - (IBAction)switchAction:(id)sender {
