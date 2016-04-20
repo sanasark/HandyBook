@@ -20,7 +20,8 @@
     
     NSString *handyBook = @"/Users/user/Desktop/ios apps/HandyBook/HandyBook/prestuplenie_i_nakazanie.epub";
     EpubReader *reader = [[EpubReader alloc] initWithEpub:handyBook];
-    [reader readEpub];
+    self.currentBook = [reader readEpub];
+    [self.books addObject:self.currentBook];
     return YES;
     
 }
@@ -122,10 +123,6 @@
         }
     }
 }
-
-
-
-
 
 @end
 
