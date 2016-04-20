@@ -13,6 +13,7 @@
 #import "BookSectionXMLParser.h"
 #import "Book.h"
 #import "AppDelegate.h"
+#import "TextManager.h"
 
 @interface EpubReader()
 
@@ -64,6 +65,8 @@
             title:contentOpfParser.bookTitle
            author:contentOpfParser.bookCreator
   bookDescription:contentOpfParser.bookDescription];
+    
+    [TextManager sharedManager].epubText = self.epubContent;
     
     [[UIApplication appDelegate] saveContext];
     return book;

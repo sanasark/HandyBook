@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.pageLabel.adjustsFontSizeToFitWidth = YES;
-  //  self.pageLabel.text = NSString stringWithFormat:@"%@",self.
+    self.pageLabel.text = [NSString stringWithFormat:@"%lu",(self.pageNumber+1) ];
     if (self.checkIsOn) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startShowingPopovers:) name:@"pageIsTurned" object:nil];
     }
@@ -43,23 +43,18 @@
 }
 
 
+
 - (void)startShowingPopovers:(NSNotification *)notification {
-    self.searchQueue =  dispatch_queue_create("search", DISPATCH_QUEUE_CONCURRENT);
-    self.checkPopover = NO;
-    [self searchUnknownWordsWithComplitionHandler:^{
-        [self checkTextinTextView:self.textView checkWordComplitionHandler:^(Word *word, CGRect sourceRect) {
-            self.checkPopover = YES;
-            [self showCheckBoxPopoverInTextView:self.textView inPosition:sourceRect forCheckingWord:word];
-        }];
-    }];
+//    self.searchQueue =  dispatch_queue_create("search", DISPATCH_QUEUE_CONCURRENT);
+//    self.checkPopover = NO;
+//    [self searchUnknownWordsWithComplitionHandler:^{
+//        [self checkTextinTextView:self.textView checkWordComplitionHandler:^(Word *word, CGRect sourceRect) {
+//            self.checkPopover = YES;
+//            [self showCheckBoxPopoverInTextView:self.textView inPosition:sourceRect forCheckingWord:word];
+//        }];
+//    }];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-
 }
 
 - (void)viewDidLayoutSubviews {
@@ -104,6 +99,14 @@
         [TextManager sharedManager].numberOfPages++;
     }
 
+//    self.searchQueue =  dispatch_queue_create("search", DISPATCH_QUEUE_CONCURRENT);
+//    self.checkPopover = NO;
+//    [self searchUnknownWordsWithComplitionHandler:^{
+//        [self checkTextinTextView:self.textView checkWordComplitionHandler:^(Word *word, CGRect sourceRect) {
+//            self.checkPopover = YES;
+//            [self showCheckBoxPopoverInTextView:self.textView inPosition:sourceRect forCheckingWord:word];
+//        }];
+//    }];
 }
 
 
@@ -112,21 +115,29 @@
     self.arrayOfExistingWords = [[NSMutableArray alloc] init];
     
     dispatch_async(self.searchQueue, ^{
-        NSArray *textArray = [self.textView.text componentsSeparatedByCharactersInSet:[[NSCharacterSet letterCharacterSet] invertedSet]] ;
+        NSArray *temp1 = [[[TextManager sharedManager] pageRanges] objectAtIndex:self.pageNumber];
+        
+        NSString *temp2 = [self.textView.text substringToIndex:([temp1[1] integerValue] - [temp1[0] integerValue])];
+        
+        NSArray *textArray = [temp2  componentsSeparatedByCharactersInSet:[[NSCharacterSet letterCharacterSet] invertedSet]] ;
         textArray = [textArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF != ''"]];
         [[DataManager sharedManager] dictionaryWordsWithComplitionHandler:^(NSArray *wordsInTheDictionary) {
-            NSMutableArray *existingWords =  [wordsInTheDictionary mutableCopy];
+            NSMutableArray *existingWords =  (NSArray *)[wordsInTheDictionary mutableCopy];
+
             BOOL wordIsFound = NO;
+            Word *temp = nil;
             for (NSString *text in textArray) {
+                
                 for (Word *existingWord in existingWords) {
                     if ([text isEqualToString:existingWord.unknownWord] ) {
                         wordIsFound = YES;
+                        temp = existingWord;
                         [self.arrayOfExistingWords insertObject:existingWord atIndex:[self.arrayOfExistingWords count]];
                     }
                 }
                 if (wordIsFound) {
                     wordIsFound = NO;
-                    [existingWords removeObject:text];
+                    [existingWords removeObject:temp];
                 }
             }
             complitionHandler();
@@ -138,8 +149,6 @@
 
 - (NSInteger)visibleRangeOfTextView:(UITextView *)textView {
     CGRect bounds = textView.bounds;
-    UITextPosition *temp1 = textView.beginningOfDocument;
-    UITextPosition *temp2 = textView.endOfDocument;
     UITextPosition *start = [textView characterRangeAtPoint:bounds.origin].start;
     UITextPosition *end = [textView characterRangeAtPoint:CGPointMake(bounds.size.width, bounds.size.height)].end;
     NSRange range = NSMakeRange([textView offsetFromPosition:textView.beginningOfDocument toPosition:start],
@@ -192,7 +201,6 @@
 }
 
 - (void)textViewDidChangeSelection:(UITextView *)textView {
-  // [self visibleRangeOfTextView:self.textView];
     
     UITextRange * selectionRange = [textView selectedTextRange];
     NSString *text = [NSString stringWithFormat:@"%@",[textView textInRange:selectionRange]];

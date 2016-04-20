@@ -10,6 +10,7 @@
 #import "TextViewController.h"
 #import "AppDelegate.h"
 #import "Book.h"
+#import "TextManager.h"
 
 @interface ReaderViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
@@ -24,6 +25,7 @@
 @implementation ReaderViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.pageVC = [[self childViewControllers] objectAtIndex:0];
     self.pageVC.delegate = self;
@@ -31,9 +33,11 @@
     self.checkSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"checkStatus"];
     [TextManager sharedManager].numberOfPages = 1;
     
-
+    textViewController *VC = [self newVCAtPage:0];
+    [self.pageVC setViewControllers:[NSArray arrayWithObject:VC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    ;
     
-    [self.pageVC setViewControllers:[NSArray arrayWithObject:[self newVCAtPage:0]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    NSLog(@"%@",[[[TextManager sharedManager] epubText] substringToIndex:4000]);
     
     if (self.checkSwitch.on) {
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"pageIsTurned" object:nil]];
@@ -42,6 +46,12 @@
     Book *book = appDelegate.currentBook;
     NSLog(@"%@", book.coverImagePath);
     }
+
+
+
+
+
+
 
 - (IBAction)switchAction:(id)sender {
     [[NSUserDefaults standardUserDefaults] setBool:self.checkSwitch.on forKey:@"checkStatus"];
