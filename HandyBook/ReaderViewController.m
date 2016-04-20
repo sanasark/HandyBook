@@ -29,11 +29,18 @@
     self.checkSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"checkStatus"];
     
     
+    textViewController *VC = [self newVCAtPage:0];
+    [self.pageVC setViewControllers:[NSArray arrayWithObject:VC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    ;
     
-    [self.pageVC setViewControllers:[NSArray arrayWithObject:[self newVCAtPage:0]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-    
-    
-    }
+}
+
+
+
+
+
+
+
 - (IBAction)switchAction:(id)sender {
     [[NSUserDefaults standardUserDefaults] setBool:self.checkSwitch.on forKey:@"checkStatus"];
 }

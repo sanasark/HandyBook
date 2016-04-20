@@ -39,6 +39,7 @@
 		CEFD70681CC3A1B1007A6088 /* TranslatePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD70671CC3A1B1007A6088 /* TranslatePopoverViewController.m */; };
 		CEFD706B1CC3A1FA007A6088 /* CheckPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD706A1CC3A1FA007A6088 /* CheckPopoverViewController.m */; };
 		CEFD70A21CC59977007A6088 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD70A11CC59977007A6088 /* TextViewController.m */; };
+		CEFD70A51CC67634007A6088 /* TextManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD70A41CC67634007A6088 /* TextManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +106,8 @@
 		CEFD706A1CC3A1FA007A6088 /* CheckPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckPopoverViewController.m; sourceTree = "<group>"; };
 		CEFD70A01CC59977007A6088 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
 		CEFD70A11CC59977007A6088 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
+		CEFD70A31CC67634007A6088 /* TextManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextManager.h; sourceTree = "<group>"; };
+		CEFD70A41CC67634007A6088 /* TextManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 			children = (
 				CED44F681CC43C78007CE27E /* EpubReader.h */,
 				CED44F691CC43C78007CE27E /* EpubReader.m */,
+				CEFD70A31CC67634007A6088 /* TextManager.h */,
+				CEFD70A41CC67634007A6088 /* TextManager.m */,
 				CED44F571CC233EF007CE27E /* EpubXMLParser */,
 				CED44F561CC233CB007CE27E /* UnZipEpub */,
 				CE9353AE1CBD7E2300A5CCC9 /* prestuplenie_i_nakazanie.epub */,
@@ -364,6 +369,7 @@
 				CEFD70131CBE7D79007A6088 /* Book.m in Sources */,
 				CED6E3371CC157650013CC39 /* SettingViewController.m in Sources */,
 				CEFD70141CBE7D79007A6088 /* Word.m in Sources */,
+				CEFD70A51CC67634007A6088 /* TextManager.m in Sources */,
 				CEFD70171CBEB213007A6088 /* DataManager.m in Sources */,
 				CEDD89951CB6E02400FD2AEE /* AppDelegate.m in Sources */,
 				CEFD70681CC3A1B1007A6088 /* TranslatePopoverViewController.m in Sources */,

@@ -13,11 +13,12 @@
 #import "DataManager.h"
 #import "CheckPopoverViewController.h"
 #import "ContainerXMLParser.h"
+#import "TextManager.h"
 
 
 @interface textViewController ()   <UIPopoverPresentationControllerDelegate, UIAdaptivePresentationControllerDelegate, UITextViewDelegate>
 
-@property (weak, nonatomic) IBOutlet HBtextView *textView;
+
 
 @property (nonatomic) dispatch_queue_t searchQueue;
 
@@ -31,6 +32,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIFont * theFont = [UIFont boldSystemFontOfSize:14];
+    CGSize charSize = [@"A" sizeWithFont:theFont];
+
+    NSInteger col = self.textView.frame.size.height / charSize.height;
+    NSInteger row = self.textView.frame.size.width  / charSize.width;
+    NSInteger numberOfCharacters = col*row;
+    NSMutableString *str = [[[TextManager sharedManager] epubText] mutableCopy];
+    self.textArray = [[NSMutableArray alloc] init];
+    NSLog(@"%D",[str length]/numberOfCharacters);
+    [self.textArray insertObject:[str substringToIndex:(numberOfCharacters)]  atIndex:0];
+    
+    NSMutableString *temp= [[NSMutableString alloc] init];
+    for (NSInteger i = 0; i<numberOfCharacters-1; i++) {
+        [temp insertString:@"i" atIndex:0];
+    }
+    [temp insertString:@"2" atIndex:[temp length]];
+    self.textView.text = temp;
+    
+    NSLog(@"%@",self.textArray[0]);
+
+    
+//    self.textView.text = self.textArray[0];
+    
     if (self.checkIsOn) {
         self.searchQueue =  dispatch_queue_create("search", DISPATCH_QUEUE_CONCURRENT);
         self.checkPopover = NO;
@@ -43,6 +68,8 @@
     }
     
 }
+
+
 
 - (void)searchUnknownWordsWithComplitionHandler:(complitionHandler)complitionHandler {
     self.arrayOfExistingWords = [[NSMutableArray alloc] init];
@@ -121,7 +148,7 @@
 }
 
 - (void)textViewDidChangeSelection:(UITextView *)textView {
-    
+
     UITextRange * selectionRange = [textView selectedTextRange];
     if (selectionRange) {
         NSString *text = [NSString stringWithFormat:@"%@",[textView textInRange:selectionRange]];

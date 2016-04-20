@@ -11,6 +11,7 @@
 #import "ContainerXMLParser.h"
 #import "ContentXMLParser.h"
 #import "BookSectionXMLParser.h"
+#import "TextManager.h"
 
 @interface EpubReader()
 
@@ -49,7 +50,7 @@
         [sectionParser parseXMLFile];
         [self.epubContent appendString:sectionParser.sectionContent];
     }
-    
+    [TextManager sharedManager].epubText = self.epubContent;
 }
 
 - (void)unZipEpub {
