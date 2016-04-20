@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    NSString *handyBook = @"/Users/user/Desktop/ios apps/HandyBook/HandyBook/prestuplenie_i_nakazanie.epub";
+    NSString *handyBook = @"/Users/user/Desktop/HandyBook/HandyBook/prestuplenie_i_nakazanie.epub";
     EpubReader *reader = [[EpubReader alloc] initWithEpub:handyBook];
     self.currentBook = [reader readEpub];
     [self.books addObject:self.currentBook];

@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HBtextView.h"
 
 @interface textViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *textArray;
+@property (nonatomic, strong) NSMutableArray *textArray;
+
+@property (weak, nonatomic) IBOutlet HBtextView *textView;
 @property (nonatomic, assign) BOOL checkIsOn;
 @property (nonatomic, assign) NSInteger pageNumber;
+
 @end

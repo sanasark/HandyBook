@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UIPageViewController *pageVC;
 @property (nonatomic, assign) NSInteger pageIndex;
 
+
 @end
 
 @implementation ReaderViewController
@@ -28,6 +29,7 @@
     self.pageVC.delegate = self;
     self.pageVC.dataSource = self;
     self.checkSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"checkStatus"];
+    [TextManager sharedManager].numberOfPages = 1;
     
 
     
@@ -78,7 +80,7 @@
     
     index++;
     
-    if (index == 5) {
+    if (index == [[TextManager sharedManager] numberOfPages]) {
         return nil;
     }
     
@@ -88,7 +90,8 @@
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
     // The number of items reflected in the page indicator.
-    return 5;
+    
+    return [[TextManager sharedManager] numberOfPages];
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
