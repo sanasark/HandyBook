@@ -14,12 +14,19 @@
 
 @interface Book : NSManagedObject
 
-@property (nullable, nonatomic, retain) NSString *path;
+@property (nullable, nonatomic, retain) NSString *bookPath;
 @property (nullable, nonatomic, retain) NSSet<Word *> *unkowndWords;
-@property (nullable, nonatomic, strong) NSString *text;
-@property (nullable, nonatomic, strong) NSData *coverImage;
-@property (nullable, nonatomic, strong) NSString *name;
+@property (nullable, nonatomic, strong) NSString *bookContent;
+@property (nullable, nonatomic, strong) NSString *coverImagePath;
+@property (nullable, nonatomic, strong) NSString *title;
 @property (nullable, nonatomic, strong) NSString *author;
+@property (nullable, nonatomic, strong) NSString *bookDescription;
+- (void)setPath:(nullable NSString *)bookPath
+    bookContent:(nullable NSString *)bookContent
+ coverImagePath:(nullable NSString *)coverImagePath
+          title:(nullable NSString *)title
+         author:(nullable NSString *)author
+bookDescription:(nullable NSString *)bookDescription;
 
 //- (void)addUnkowndWordsObject:(Word * _Nullable)value;
 //- (void)removeUnkowndWordsObject:(nullable Word *)value;
