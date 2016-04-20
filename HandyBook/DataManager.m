@@ -40,7 +40,15 @@
 }
 
 
-- (void)insertWordInCoreData:(NSString *)word withTranslation:(NSString *)Translation {
+- (void)insertBookWithName:(NSString *)name
+                      text:(NSString *)text
+                coverImage:(UIImage *)image {
+    
+}
+
+
+- (void)insertWordInCoreData:(NSString *)word
+             withTranslation:(NSString *)Translation {
     
     dispatch_async(self.queue, ^{
         
@@ -69,7 +77,8 @@
 }
 
 
-- (void)infoForWord:(NSString *)word complitionHandler:(wordInfoComplitionHandler)complitionHandler {
+- (void)infoForWord:(NSString *)word
+  complitionHandler:(wordInfoComplitionHandler)complitionHandler {
     dispatch_async(self.queue, ^{
         NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:kEntityNameWord];
         [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"unknownWord == %@", word]];
