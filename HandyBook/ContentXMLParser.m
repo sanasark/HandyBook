@@ -54,7 +54,7 @@ didStartElement:(NSString *)elementName
 
 - (void)parser:(NSXMLParser *)parser
 foundCharacters:(NSString *)string {
-
+    
     if ([self.element isEqualToString:@"dc:title"] && !self.bookTitle) {
         self.bookTitle = string;
     } else if ([self.element isEqualToString:@"dc:creator"] && !self.bookCreator) {
@@ -67,10 +67,10 @@ foundCharacters:(NSString *)string {
     }  else if ([self.element isEqualToString:@"item"]) {
         NSString *idValue = [self.attribute valueForKey:@"id"];
         if ([idValue isEqualToString:@"cover.jpg"]) {
-            self.coverImagePath = [self.attribute valueForKey:@"href"];
+            self.coverImagePath = [NSString stringWithFormat:@"%@/%@",[self.file stringByDeletingLastPathComponent], [self.attribute valueForKey:@"href"]];
         } else if (![idValue isEqualToString:@"cover"] &&
-                    ![idValue isEqualToString:@"title"] &&
-                    [[self.attribute valueForKey:@"media-type"] isEqualToString:@"application/xhtml+xml"]) {
+                   ![idValue isEqualToString:@"title"] &&
+                   [[self.attribute valueForKey:@"media-type"] isEqualToString:@"application/xhtml+xml"]) {
             [self.bookContentFilePathsWithOrder setValue:[self.attribute valueForKey:@"href"]
                                                   forKey:[self.attribute valueForKey:@"id"]];
         }
@@ -85,7 +85,7 @@ foundCharacters:(NSString *)string {
  didEndElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI
  qualifiedName:(NSString *)qName {
-
+    
     if ([self.element isEqualToString:@"spine"]) {
         [parser abortParsing];
     }
