@@ -7,15 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Book.h"
 
 @interface EpubReader : NSObject
 
-@property NSString *epubPath;
-@property NSMutableString *epubContent;
-@property NSString *epubCoverImagePath;
-@property NSString *epubName;
-
 - (id)initWithEpub:(NSString *)file;
-- (void)readEpub;
+- (Book *)readEpub;
 
 @end
