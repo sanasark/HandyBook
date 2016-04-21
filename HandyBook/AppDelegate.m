@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    NSString *handyBook = @"/Users/user/Desktop/HandyBook/HandyBook/prestuplenie_i_nakazanie.epub";
+    NSString *handyBook = @"/Users/user/Desktop/ios apps/HandyBook/HandyBook/prestuplenie_i_nakazanie.epub";
     EpubReader *reader = [[EpubReader alloc] initWithEpub:handyBook];
     self.currentBook = [reader readEpub];
     [self.books addObject:self.currentBook];
@@ -32,12 +32,15 @@
     if (url == nil) {
         return NO;
     } else {
-        NSString *URLfromSafary = [url absoluteString];
-        NSURL *myURL = [NSURL URLWithString:URLfromSafary];
-        NSData *data = [NSData dataWithContentsOfURL:myURL];
-        NSLog(@"%@ lol", data);
-        EpubReader *reader = [[EpubReader alloc] initWithEpub:[myURL absoluteString]];
+        NSString *downloadedEpubfromSafary = [url absoluteString];
+        
+        NSString *downloadedEpubPath = [downloadedEpubfromSafary stringByReplacingOccurrencesOfString:@"file://"
+                                                                                     withString:@""];
+   
+        EpubReader *reader = [[EpubReader alloc] initWithEpub:downloadedEpubPath];
         [reader readEpub];
+        self.currentBook = [reader readEpub];
+        [self.books addObject:self.currentBook];
         return YES;
     }
 }
