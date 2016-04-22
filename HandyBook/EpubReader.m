@@ -57,16 +57,16 @@
     }
     
     NSManagedObjectContext *context = [[UIApplication appDelegate] managedObjectContext];
-    Book *book = [NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:context];
+    Book *book = [NSEntityDescription insertNewObjectForEntityForName:kEntityNameBook inManagedObjectContext:context];
     
     [book setPath:self.epubPath
       bookContent:self.epubContent
-   coverImagePath:contentOpfParser.coverImagePath
+   coverImagePath:[self.epubName stringByAppendingFormat:@"/%@",contentOpfParser.coverImagePath]
             title:contentOpfParser.bookTitle
            author:contentOpfParser.bookCreator
   bookDescription:contentOpfParser.bookDescription];
     
-    [TextManager sharedManager].epubText = self.epubContent;
+    //[TextManager sharedManager].epubText = self.epubContent;
     
     [[UIApplication appDelegate] saveContext];
     return book;

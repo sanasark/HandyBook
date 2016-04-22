@@ -66,8 +66,10 @@ foundCharacters:(NSString *)string {
         [self.bookDescription appendString:string];
     }  else if ([self.element isEqualToString:@"item"]) {
         NSString *idValue = [self.attribute valueForKey:@"id"];
-        if ([idValue isEqualToString:@"cover.jpg"]) {
-            self.coverImagePath = [NSString stringWithFormat:@"%@/%@",[self.file stringByDeletingLastPathComponent], [self.attribute valueForKey:@"href"]];
+        if ([idValue isEqualToString:@"cover.jpg"] || [idValue isEqualToString:@"cover-image"]) {
+            //self.coverImagePath = [NSString stringWithFormat:@"%@/%@",[self.file stringByDeletingLastPathComponent], [self.attribute valueForKey:@"href"]];
+            self.coverImagePath = [self.attribute valueForKey:@"href"];
+            //OEBPS/assets/themetamorphosis_1200x1600.jpg
         } else if (![idValue isEqualToString:@"cover"] &&
                    ![idValue isEqualToString:@"title"] &&
                    [[self.attribute valueForKey:@"media-type"] isEqualToString:@"application/xhtml+xml"]) {

@@ -42,16 +42,11 @@
     if (self.checkSwitch.on) {
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"pageIsTurned" object:nil]];
     }
+    
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     Book *book = appDelegate.currentBook;
     NSLog(@"%@", book.coverImagePath);
-    }
-
-
-
-
-
-
+}
 
 - (IBAction)switchAction:(id)sender {
     [[NSUserDefaults standardUserDefaults] setBool:self.checkSwitch.on forKey:@"checkStatus"];
@@ -95,7 +90,6 @@
     }
     
     return [self newVCAtPage:index];
-    
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
