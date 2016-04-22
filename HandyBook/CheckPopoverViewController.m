@@ -28,7 +28,7 @@
 }
 - (IBAction)checkAction:(id)sender {
 
-    if ([self.textField.text isEqualToString:self.wordForCheck.translation]) {
+    if ([self.textField.text caseInsensitiveCompare:self.wordForCheck.translation] == NSOrderedSame) {
         self.textField.textColor = [UIColor greenColor];
         self.textField.text = @"Right";
     } else {

@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.pageLabel.adjustsFontSizeToFitWidth = YES;
-    self.pageLabel.text = [NSString stringWithFormat:@"%lu",(self.pageNumber+1) ];
+    self.pageLabel.text = [NSString stringWithFormat:@"%ld",(self.pageNumber+1) ];
     if (self.checkIsOn) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startShowingPopovers:) name:@"pageIsTurned" object:nil];
     }
