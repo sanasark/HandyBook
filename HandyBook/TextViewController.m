@@ -26,7 +26,6 @@
 @property (nonatomic, assign) BOOL checkPopover;
 @property (weak, nonatomic) IBOutlet UILabel *pageLabel;
 
-
 @end
 
 @implementation textViewController
@@ -45,14 +44,14 @@
 
 
 - (void)startShowingPopovers:(NSNotification *)notification {
-//    self.searchQueue =  dispatch_queue_create("search", DISPATCH_QUEUE_CONCURRENT);
-//    self.checkPopover = NO;
-//    [self searchUnknownWordsWithComplitionHandler:^{
-//        [self checkTextinTextView:self.textView checkWordComplitionHandler:^(Word *word, CGRect sourceRect) {
-//            self.checkPopover = YES;
-//            [self showCheckBoxPopoverInTextView:self.textView inPosition:sourceRect forCheckingWord:word];
-//        }];
-//    }];
+    self.searchQueue =  dispatch_queue_create("search", DISPATCH_QUEUE_CONCURRENT);
+    self.checkPopover = NO;
+    [self searchUnknownWordsWithComplitionHandler:^{
+        [self checkTextinTextView:self.textView checkWordComplitionHandler:^(Word *word, CGRect sourceRect) {
+            self.checkPopover = YES;
+            [self showCheckBoxPopoverInTextView:self.textView inPosition:sourceRect forCheckingWord:word];
+        }];
+    }];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
@@ -98,15 +97,11 @@
     if ([[[TextManager sharedManager] epubText] length] > [[[[[TextManager sharedManager] pageRanges] objectAtIndex:self.pageNumber] objectAtIndex:1] integerValue]) {
         [TextManager sharedManager].numberOfPages++;
     }
+    if (self.firstPage) {
+        self.firstPage = NO;
+        [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"pageIsTurned" object:nil]];
+    }
 
-//    self.searchQueue =  dispatch_queue_create("search", DISPATCH_QUEUE_CONCURRENT);
-//    self.checkPopover = NO;
-//    [self searchUnknownWordsWithComplitionHandler:^{
-//        [self checkTextinTextView:self.textView checkWordComplitionHandler:^(Word *word, CGRect sourceRect) {
-//            self.checkPopover = YES;
-//            [self showCheckBoxPopoverInTextView:self.textView inPosition:sourceRect forCheckingWord:word];
-//        }];
-//    }];
 }
 
 
@@ -122,7 +117,7 @@
         NSArray *textArray = [temp2  componentsSeparatedByCharactersInSet:[[NSCharacterSet letterCharacterSet] invertedSet]] ;
         textArray = [textArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF != ''"]];
         [[DataManager sharedManager] dictionaryWordsWithComplitionHandler:^(NSArray *wordsInTheDictionary) {
-            NSMutableArray *existingWords =  (NSArray *)[wordsInTheDictionary mutableCopy];
+            NSMutableArray *existingWords = [wordsInTheDictionary mutableCopy];
 
             BOOL wordIsFound = NO;
             Word *temp = nil;
@@ -160,7 +155,15 @@
 - (void)checkTextinTextView:(UITextView *)textView checkWordComplitionHandler:(checkWordComplitionHandler)complitionHandler {
     
     if ([self.arrayOfExistingWords count]>0) {
-        NSRange range = [textView.text rangeOfString:[self.arrayOfExistingWords[0] unknownWord]];
+       // NSRange range = [textView.text rangeOfString:[self.arrayOfExistingWords[0] unknownWord]];
+        __block NSRange range;
+        [textView.text enumerateSubstringsInRange:(NSRange){ .location = 0, .length = [textView.text length] } options:NSStringEnumerationByWords usingBlock:^(NSString * _Nullable substring, NSRange substringRange, NSRange enclosingRange, BOOL * _Nonnull stop) {
+            if ([substring caseInsensitiveCompare:[self.arrayOfExistingWords[0] unknownWord]] == NSOrderedSame) {
+                range = substringRange;
+                *stop = YES;
+            }
+        }];
+                                     
         UITextPosition *beginning = textView.beginningOfDocument;
         UITextPosition *start = [textView positionFromPosition:beginning offset:range.location];
         UITextPosition *end = [textView positionFromPosition:start offset:range.length];

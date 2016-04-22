@@ -16,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet HBtextView *textView;
 @property (nonatomic, assign) BOOL checkIsOn;
 @property (nonatomic, assign) NSInteger pageNumber;
+@property (nonatomic, assign) BOOL firstPage;
+
 
 @end

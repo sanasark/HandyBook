@@ -34,14 +34,12 @@
     [TextManager sharedManager].numberOfPages = 1;
     
     textViewController *VC = [self newVCAtPage:0];
+    if (self.checkSwitch.on == YES) {
+        VC.firstPage = YES;
+    }
     [self.pageVC setViewControllers:[NSArray arrayWithObject:VC] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     ;
     
-    NSLog(@"%@",[[[TextManager sharedManager] epubText] substringToIndex:4000]);
-    
-    if (self.checkSwitch.on) {
-        [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"pageIsTurned" object:nil]];
-    }
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     Book *book = appDelegate.currentBook;
