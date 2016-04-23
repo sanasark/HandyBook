@@ -28,14 +28,30 @@
 
 #pragma mark - Read Epub
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
+//- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
+//    NSLog(@"KALOL");
+//    if (url == nil) {
+//        return NO;
+//    } else {
+//        NSString *downloadedEpubfromSafary = [url absoluteString];
+//        
+//        NSString *downloadedEpubPath = [downloadedEpubfromSafary stringByReplacingOccurrencesOfString:@"file://"
+//                                                                                     withString:@""];
+//        EpubReader *reader = [[EpubReader alloc] initWithEpub:downloadedEpubPath];
+//        self.currentBook = [reader readEpub];
+//        [self.books addObject:self.currentBook];
+//        return YES;
+//    }
+//}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     if (url == nil) {
         return NO;
     } else {
         NSString *downloadedEpubfromSafary = [url absoluteString];
         
         NSString *downloadedEpubPath = [downloadedEpubfromSafary stringByReplacingOccurrencesOfString:@"file://"
-                                                                                     withString:@""];
+                                                                                           withString:@""];
         EpubReader *reader = [[EpubReader alloc] initWithEpub:downloadedEpubPath];
         self.currentBook = [reader readEpub];
         [self.books addObject:self.currentBook];

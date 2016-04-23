@@ -39,6 +39,7 @@
 
 -(void)reloadBooks {
     [self.booksCollectionView reloadData];
+    NSLog(@"lol");
 }
 
 - (IBAction)goToMain:(id)sender {
@@ -88,6 +89,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"kek");
     static NSString *cellIndentifier = @"BookCell";
     BookCollectionViewCell *bookCell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIndentifier
                                                                                         forIndexPath:indexPath];
@@ -98,6 +100,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSString *coverImagePath = [documentsDirectory stringByAppendingFormat:@"/%@", currentBook.coverImagePath];
     NSLog(@"%@", coverImagePath);
     [bookCell.coverImage setImage:[UIImage imageNamed:coverImagePath]];
+    NSLog(@"kek");
     return bookCell;
 }
 

@@ -58,8 +58,6 @@
 
 - (void)viewDidLayoutSubviews {
     if ([[[TextManager sharedManager] pageRanges] count] > self.pageNumber) {
-        NSArray *temp = [[[TextManager sharedManager] pageRanges] objectAtIndex:self.pageNumber];
-        self.textView.text = [[[[TextManager sharedManager] epubText] substringFromIndex:[temp[0] integerValue]] substringToIndex:[temp[1] integerValue]];
         
     } else {
         
@@ -94,6 +92,8 @@
         }
         
     }
+    NSArray *temp = [[[TextManager sharedManager] pageRanges] objectAtIndex:self.pageNumber];
+    self.textView.text = [[[[TextManager sharedManager] epubText] substringFromIndex:[temp[0] integerValue]] substringToIndex:[temp[1] integerValue]];
     if ([[[TextManager sharedManager] epubText] length] > [[[[[TextManager sharedManager] pageRanges] objectAtIndex:self.pageNumber] objectAtIndex:1] integerValue]) {
         [TextManager sharedManager].numberOfPages++;
     }

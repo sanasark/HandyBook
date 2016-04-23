@@ -10,7 +10,6 @@
 
 @interface BookCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIButton *bookCell;
 @property (weak, nonatomic) IBOutlet UIImageView *coverImage;
 
 @end

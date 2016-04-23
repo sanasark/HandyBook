@@ -23,6 +23,9 @@
 @end
 
 @implementation ReaderViewController
+- (IBAction)backToTheMain:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)viewDidLoad {
     
